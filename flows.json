@@ -1,0 +1,787 @@
+[
+    {
+        "id": "f72bb2244a560e6f",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "03232f3818c9517d",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "32f8c409253a7a7e",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b32211bd46e7cb79",
+        "type": "ui_group",
+        "name": "Home",
+        "tab": "87dffc063e3f0c68",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "87dffc063e3f0c68",
+        "type": "ui_tab",
+        "name": "amongus",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ddbb7bea086b7b90",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#5e4a54",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#5e4a54",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#5e4a54",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#896c7a",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#5e4a54",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "daed06a07de91f6e",
+        "type": "ui_group",
+        "name": "Security",
+        "tab": "4e53ebea557c3eb1",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4e53ebea557c3eb1",
+        "type": "ui_tab",
+        "name": "login",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "b15143b64952c76c",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "830a7d861e8cb044",
+        "type": "inject",
+        "z": "f72bb2244a560e6f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "payload2",
+                "v": "69",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Amongus",
+        "payloadType": "str",
+        "x": 180,
+        "y": 160,
+        "wires": [
+            [
+                "417031bba7315954"
+            ]
+        ]
+    },
+    {
+        "id": "0beeba5d1e1bd74c",
+        "type": "debug",
+        "z": "f72bb2244a560e6f",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "amongus",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "417031bba7315954",
+        "type": "function",
+        "z": "f72bb2244a560e6f",
+        "name": "function 1",
+        "func": "let randValue = Math.random() * 100;\nif (randValue > 50)\n{\n    msg.amongus = \"All good\";\n}\nelse \n{\n    msg.amongus = \"too hot\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 260,
+        "wires": [
+            [
+                "0beeba5d1e1bd74c"
+            ]
+        ]
+    },
+    {
+        "id": "ccef3e3dfe2e928e",
+        "type": "ui_button",
+        "z": "03232f3818c9517d",
+        "name": "",
+        "group": "b32211bd46e7cb79",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Click here",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "twitter",
+        "payload": "",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 240,
+        "y": 160,
+        "wires": [
+            [
+                "f70643d008b40c33"
+            ]
+        ]
+    },
+    {
+        "id": "471f9dd1ec7ddaf7",
+        "type": "ui_text",
+        "z": "03232f3818c9517d",
+        "group": "b32211bd46e7cb79",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "The number:",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 510,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "3d353ed1cc59bb7d",
+        "type": "function",
+        "z": "03232f3818c9517d",
+        "name": "function 2",
+        "func": "flow.set(\"minValue\", msg.payload);\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3c51108f10acf14b",
+        "type": "ui_numeric",
+        "z": "03232f3818c9517d",
+        "name": "",
+        "label": "min",
+        "tooltip": "",
+        "group": "b32211bd46e7cb79",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "x": 230,
+        "y": 400,
+        "wires": [
+            [
+                "3d353ed1cc59bb7d"
+            ]
+        ]
+    },
+    {
+        "id": "2ca8ec83b8088897",
+        "type": "comment",
+        "z": "03232f3818c9517d",
+        "name": "flow.set(\"numericValue\", msg.payload);",
+        "info": "",
+        "x": 570,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "29dc33867336cccb",
+        "type": "comment",
+        "z": "03232f3818c9517d",
+        "name": "let a = flow.get(\"numericValue\");",
+        "info": "",
+        "x": 550,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "f70643d008b40c33",
+        "type": "function",
+        "z": "03232f3818c9517d",
+        "name": "function 3",
+        "func": "let min = flow.get(\"minValue\");\nlet max = flow.get(\"maxValue\");\nlet randVal = Math.ceil(Math.random() * max - min + 1) + min;\nmsg.payload = randVal;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 280,
+        "wires": [
+            [
+                "471f9dd1ec7ddaf7"
+            ]
+        ]
+    },
+    {
+        "id": "5eb61a82d0289e44",
+        "type": "function",
+        "z": "03232f3818c9517d",
+        "name": "function 4",
+        "func": "flow.set(\"maxValue\", msg.payload);\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a1fd157af1e9a8ef",
+        "type": "ui_numeric",
+        "z": "03232f3818c9517d",
+        "name": "",
+        "label": "max",
+        "tooltip": "",
+        "group": "b32211bd46e7cb79",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "x": 230,
+        "y": 460,
+        "wires": [
+            [
+                "5eb61a82d0289e44"
+            ]
+        ]
+    },
+    {
+        "id": "16f8c167198aba52",
+        "type": "ui_gauge",
+        "z": "03232f3818c9517d",
+        "name": "",
+        "group": "b32211bd46e7cb79",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{msg.payload}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#a1d3a1",
+            "#eaea71",
+            "#b87592"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 630,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "e69d7d8d72635614",
+        "type": "ui_chart",
+        "z": "03232f3818c9517d",
+        "name": "",
+        "group": "b32211bd46e7cb79",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 630,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b9b5f4bf2189f506",
+        "type": "function",
+        "z": "03232f3818c9517d",
+        "name": "function 5",
+        "func": "let amongus = Math.round(Math.random() * 100);\nmsg.payload = amongus;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 580,
+        "wires": [
+            [
+                "16f8c167198aba52",
+                "e69d7d8d72635614"
+            ]
+        ]
+    },
+    {
+        "id": "148e8933af0a4909",
+        "type": "inject",
+        "z": "03232f3818c9517d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 250,
+        "y": 580,
+        "wires": [
+            [
+                "b9b5f4bf2189f506"
+            ]
+        ]
+    },
+    {
+        "id": "7e014514742c6908",
+        "type": "ui_form",
+        "z": "03232f3818c9517d",
+        "name": "",
+        "label": "",
+        "group": "daed06a07de91f6e",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "username:",
+                "value": "username",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "password:",
+                "value": "password",
+                "type": "password",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "username": "",
+            "password": ""
+        },
+        "payload": "",
+        "submit": "Log in",
+        "cancel": "",
+        "topic": "payload",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 350,
+        "y": 780,
+        "wires": [
+            [
+                "9ecbdbfcfc1d6b43"
+            ]
+        ]
+    },
+    {
+        "id": "b0267f8114c487fb",
+        "type": "ui_toast",
+        "z": "03232f3818c9517d",
+        "position": "top left",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": true,
+        "className": "msg.payload",
+        "topic": "",
+        "name": "show notification",
+        "x": 730,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "9ecbdbfcfc1d6b43",
+        "type": "function",
+        "z": "03232f3818c9517d",
+        "name": "function 6",
+        "func": "let username = msg.payload.username;\nlet password = msg.payload.password;\nif (username == \"admin\" && password == \"admin\")\n{\n    msg.payload = \"Ngon\";\n}\nelse{\n    msg.payload = \"Ngu\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 780,
+        "wires": [
+            [
+                "b0267f8114c487fb",
+                "a7c9c1817de31859"
+            ]
+        ]
+    },
+    {
+        "id": "a7c9c1817de31859",
+        "type": "ui_ui_control",
+        "z": "03232f3818c9517d",
+        "name": "display_control",
+        "events": "all",
+        "x": 610,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "af229cfc7c859127",
+        "type": "inject",
+        "z": "03232f3818c9517d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "{\"tab\":\"login\"}",
+        "payloadType": "json",
+        "x": 180,
+        "y": 720,
+        "wires": [
+            [
+                "84b0453f4436116d"
+            ]
+        ]
+    },
+    {
+        "id": "84b0453f4436116d",
+        "type": "ui_ui_control",
+        "z": "03232f3818c9517d",
+        "name": "",
+        "events": "all",
+        "x": 360,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "46c23bd6c6fa2aa6",
+        "type": "mqtt in",
+        "z": "32f8c409253a7a7e",
+        "name": "",
+        "topic": "21127687/temperature",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "b15143b64952c76c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 260,
+        "y": 220,
+        "wires": [
+            [
+                "6b0683c886f30e14"
+            ]
+        ]
+    },
+    {
+        "id": "6b0683c886f30e14",
+        "type": "debug",
+        "z": "32f8c409253a7a7e",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "f3cff1431b98d34b",
+        "type": "ui_switch",
+        "z": "32f8c409253a7a7e",
+        "name": "",
+        "label": "switch",
+        "tooltip": "",
+        "group": "b32211bd46e7cb79",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 490,
+        "y": 360,
+        "wires": [
+            [
+                "4343fb17198b6135"
+            ]
+        ]
+    },
+    {
+        "id": "4343fb17198b6135",
+        "type": "mqtt out",
+        "z": "32f8c409253a7a7e",
+        "name": "",
+        "topic": "21127687/led",
+        "qos": "1",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "b15143b64952c76c",
+        "x": 700,
+        "y": 360,
+        "wires": []
+    }
+]
