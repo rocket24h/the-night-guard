@@ -24,6 +24,14 @@
         "env": []
     },
     {
+        "id": "3a25091b9f4437f5",
+        "type": "tab",
+        "label": "Main flow",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "b32211bd46e7cb79",
         "type": "ui_group",
         "name": "Home",
@@ -782,6 +790,51 @@
         "broker": "b15143b64952c76c",
         "x": 700,
         "y": 360,
+        "wires": []
+    },
+    {
+        "id": "29e33591c837504e",
+        "type": "inject",
+        "z": "3a25091b9f4437f5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "test",
+        "payloadType": "str",
+        "x": 250,
+        "y": 200,
+        "wires": [
+            [
+                "3eac432b0876caae"
+            ]
+        ]
+    },
+    {
+        "id": "3eac432b0876caae",
+        "type": "debug",
+        "z": "3a25091b9f4437f5",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 180,
         "wires": []
     }
 ]
