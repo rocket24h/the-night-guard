@@ -2,7 +2,9 @@
     "name": "the-night-guard",
     "description": "A Node-RED Project",
     "version": "0.0.1",
-    "dependencies": {},
+    "dependencies": {
+        "node-red-dashboard": "3.6.2"
+    },
     "node-red": {
         "settings": {
             "flowFile": "flows.json",

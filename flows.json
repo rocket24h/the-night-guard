@@ -32,142 +32,6 @@
         "env": []
     },
     {
-        "id": "b32211bd46e7cb79",
-        "type": "ui_group",
-        "name": "Home",
-        "tab": "87dffc063e3f0c68",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "87dffc063e3f0c68",
-        "type": "ui_tab",
-        "name": "amongus",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "ddbb7bea086b7b90",
-        "type": "ui_base",
-        "theme": {
-            "name": "theme-dark",
-            "lightTheme": {
-                "default": "#0094CE",
-                "baseColor": "#0094CE",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "darkTheme": {
-                "default": "#097479",
-                "baseColor": "#5e4a54",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "customTheme": {
-                "name": "Untitled Theme 1",
-                "default": "#4B7930",
-                "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-            },
-            "themeState": {
-                "base-color": {
-                    "default": "#097479",
-                    "value": "#5e4a54",
-                    "edited": true
-                },
-                "page-titlebar-backgroundColor": {
-                    "value": "#5e4a54",
-                    "edited": false
-                },
-                "page-backgroundColor": {
-                    "value": "#111111",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#333333",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#896c7a",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#555555",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#333333",
-                    "edited": false
-                },
-                "widget-textColor": {
-                    "value": "#eeeeee",
-                    "edited": false
-                },
-                "widget-backgroundColor": {
-                    "value": "#5e4a54",
-                    "edited": false
-                },
-                "widget-borderColor": {
-                    "value": "#333333",
-                    "edited": false
-                },
-                "base-font": {
-                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-                }
-            },
-            "angularTheme": {
-                "primary": "indigo",
-                "accents": "blue",
-                "warn": "red",
-                "background": "grey",
-                "palette": "light"
-            }
-        },
-        "site": {
-            "name": "Node-RED Dashboard",
-            "hideToolbar": "false",
-            "allowSwipe": "false",
-            "lockMenu": "false",
-            "allowTempTheme": "true",
-            "dateFormat": "DD/MM/YYYY",
-            "sizes": {
-                "sx": 48,
-                "sy": 48,
-                "gx": 6,
-                "gy": 6,
-                "cx": 6,
-                "cy": 6,
-                "px": 0,
-                "py": 0
-            }
-        }
-    },
-    {
-        "id": "daed06a07de91f6e",
-        "type": "ui_group",
-        "name": "Security",
-        "tab": "4e53ebea557c3eb1",
-        "order": 2,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "4e53ebea557c3eb1",
-        "type": "ui_tab",
-        "name": "login",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "b15143b64952c76c",
         "type": "mqtt-broker",
         "name": "",
@@ -197,6 +61,244 @@
         "willMsg": {},
         "userProps": "",
         "sessionExpiry": ""
+    },
+    {
+        "id": "fc45193b28ea7002",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "ddbb7bea086b7b90",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#092a77",
+                "baseFont": "Gill Sans,Geneva,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#092a77",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#092a77",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0e43be",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#092a77",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "Gill Sans,Geneva,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "true",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "4e53ebea557c3eb1",
+        "type": "ui_tab",
+        "name": "login",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": true
+    },
+    {
+        "id": "d9bbe39a0bc2616d",
+        "type": "ui_tab",
+        "name": "test",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "f17ef0ab4d11233a",
+        "type": "ui_tab",
+        "name": "auth-login",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": true
+    },
+    {
+        "id": "8b02c8573e0952d1",
+        "type": "ui_tab",
+        "name": "auth-signup",
+        "icon": "dashboard",
+        "order": 5,
+        "disabled": false,
+        "hidden": true
+    },
+    {
+        "id": "1313f1b60887611e",
+        "type": "ui_tab",
+        "name": "greeter",
+        "icon": "dashboard",
+        "order": 5,
+        "disabled": false,
+        "hidden": true
+    },
+    {
+        "id": "daed06a07de91f6e",
+        "type": "ui_group",
+        "name": "Security",
+        "tab": "4e53ebea557c3eb1",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "10dbf9402ea3e73b",
+        "type": "ui_group",
+        "name": "Randomizer",
+        "tab": "d9bbe39a0bc2616d",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "363c02f0f48a7b4f",
+        "type": "ui_group",
+        "name": "Sign-up-form",
+        "tab": "8b02c8573e0952d1",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "262e82c563d5b316",
+        "type": "ui_group",
+        "name": "Welcome to The night guard!",
+        "tab": "1313f1b60887611e",
+        "order": 1,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e425100794e8572c",
+        "type": "ui_group",
+        "name": "Log-in-form",
+        "tab": "f17ef0ab4d11233a",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "dce647b73cbd425a",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "4e53ebea557c3eb1",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
     },
     {
         "id": "830a7d861e8cb044",
@@ -266,55 +368,6 @@
         ]
     },
     {
-        "id": "ccef3e3dfe2e928e",
-        "type": "ui_button",
-        "z": "03232f3818c9517d",
-        "name": "",
-        "group": "b32211bd46e7cb79",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "label": "Click here",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "twitter",
-        "payload": "",
-        "payloadType": "num",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 240,
-        "y": 160,
-        "wires": [
-            [
-                "f70643d008b40c33"
-            ]
-        ]
-    },
-    {
-        "id": "471f9dd1ec7ddaf7",
-        "type": "ui_text",
-        "z": "03232f3818c9517d",
-        "group": "b32211bd46e7cb79",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "The number:",
-        "format": "{{msg.payload}}",
-        "layout": "row-left",
-        "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": 16,
-        "color": "#000000",
-        "x": 510,
-        "y": 280,
-        "wires": []
-    },
-    {
         "id": "3d353ed1cc59bb7d",
         "type": "function",
         "z": "03232f3818c9517d",
@@ -326,38 +379,10 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 460,
-        "y": 400,
+        "x": 480,
+        "y": 600,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "3c51108f10acf14b",
-        "type": "ui_numeric",
-        "z": "03232f3818c9517d",
-        "name": "",
-        "label": "min",
-        "tooltip": "",
-        "group": "b32211bd46e7cb79",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "wrap": false,
-        "passthru": true,
-        "topic": "topic",
-        "topicType": "msg",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "100",
-        "step": 1,
-        "className": "",
-        "x": 230,
-        "y": 400,
-        "wires": [
-            [
-                "3d353ed1cc59bb7d"
-            ]
         ]
     },
     {
@@ -366,8 +391,8 @@
         "z": "03232f3818c9517d",
         "name": "flow.set(\"numericValue\", msg.payload);",
         "info": "",
-        "x": 570,
-        "y": 340,
+        "x": 350,
+        "y": 540,
         "wires": []
     },
     {
@@ -376,8 +401,8 @@
         "z": "03232f3818c9517d",
         "name": "let a = flow.get(\"numericValue\");",
         "info": "",
-        "x": 550,
-        "y": 180,
+        "x": 330,
+        "y": 420,
         "wires": []
     },
     {
@@ -392,8 +417,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
-        "y": 280,
+        "x": 340,
+        "y": 480,
         "wires": [
             [
                 "471f9dd1ec7ddaf7"
@@ -412,108 +437,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 460,
-        "y": 460,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "a1fd157af1e9a8ef",
-        "type": "ui_numeric",
-        "z": "03232f3818c9517d",
-        "name": "",
-        "label": "max",
-        "tooltip": "",
-        "group": "b32211bd46e7cb79",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "wrap": false,
-        "passthru": true,
-        "topic": "topic",
-        "topicType": "msg",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "100",
-        "step": 1,
-        "className": "",
-        "x": 230,
-        "y": 460,
-        "wires": [
-            [
-                "5eb61a82d0289e44"
-            ]
-        ]
-    },
-    {
-        "id": "16f8c167198aba52",
-        "type": "ui_gauge",
-        "z": "03232f3818c9517d",
-        "name": "",
-        "group": "b32211bd46e7cb79",
-        "order": 5,
-        "width": 0,
-        "height": 0,
-        "gtype": "gage",
-        "title": "gauge",
-        "label": "units",
-        "format": "{{msg.payload}}",
-        "min": 0,
-        "max": "100",
-        "colors": [
-            "#a1d3a1",
-            "#eaea71",
-            "#b87592"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "diff": false,
-        "className": "",
-        "x": 630,
-        "y": 540,
-        "wires": []
-    },
-    {
-        "id": "e69d7d8d72635614",
-        "type": "ui_chart",
-        "z": "03232f3818c9517d",
-        "name": "",
-        "group": "b32211bd46e7cb79",
-        "order": 6,
-        "width": 0,
-        "height": 0,
-        "label": "chart",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": 1,
-        "removeOlderPoints": "",
-        "removeOlderUnit": "60",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 630,
-        "y": 600,
+        "x": 480,
+        "y": 660,
         "wires": [
             []
         ]
@@ -530,8 +455,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 460,
-        "y": 580,
+        "x": 480,
+        "y": 780,
         "wires": [
             [
                 "16f8c167198aba52",
@@ -560,11 +485,116 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 250,
-        "y": 580,
+        "x": 270,
+        "y": 780,
         "wires": [
             [
                 "b9b5f4bf2189f506"
+            ]
+        ]
+    },
+    {
+        "id": "9ecbdbfcfc1d6b43",
+        "type": "function",
+        "z": "03232f3818c9517d",
+        "name": "function 6",
+        "func": "let username = msg.payload.username;\nlet password = msg.payload.password;\nif (username == \"admin\" && password == \"admin\")\n{\n    msg.payload = \"Ngon\";\n}\nelse{\n    msg.payload = \"Ngu\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 160,
+        "wires": [
+            [
+                "b0267f8114c487fb",
+                "a7c9c1817de31859"
+            ]
+        ]
+    },
+    {
+        "id": "ccef3e3dfe2e928e",
+        "type": "ui_button",
+        "z": "03232f3818c9517d",
+        "name": "",
+        "group": "10dbf9402ea3e73b",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Click here",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "twitter",
+        "payload": "",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 160,
+        "y": 480,
+        "wires": [
+            [
+                "f70643d008b40c33"
+            ]
+        ]
+    },
+    {
+        "id": "3c51108f10acf14b",
+        "type": "ui_numeric",
+        "z": "03232f3818c9517d",
+        "name": "",
+        "label": "min",
+        "tooltip": "",
+        "group": "10dbf9402ea3e73b",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "x": 250,
+        "y": 600,
+        "wires": [
+            [
+                "3d353ed1cc59bb7d"
+            ]
+        ]
+    },
+    {
+        "id": "a1fd157af1e9a8ef",
+        "type": "ui_numeric",
+        "z": "03232f3818c9517d",
+        "name": "",
+        "label": "max",
+        "tooltip": "",
+        "group": "10dbf9402ea3e73b",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "x": 250,
+        "y": 660,
+        "wires": [
+            [
+                "5eb61a82d0289e44"
             ]
         ]
     },
@@ -605,12 +635,105 @@
         "topicType": "msg",
         "splitLayout": "",
         "className": "",
-        "x": 350,
-        "y": 780,
+        "x": 170,
+        "y": 160,
         "wires": [
             [
                 "9ecbdbfcfc1d6b43"
             ]
+        ]
+    },
+    {
+        "id": "471f9dd1ec7ddaf7",
+        "type": "ui_text",
+        "z": "03232f3818c9517d",
+        "group": "10dbf9402ea3e73b",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "The number:",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 530,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "16f8c167198aba52",
+        "type": "ui_gauge",
+        "z": "03232f3818c9517d",
+        "name": "",
+        "group": "10dbf9402ea3e73b",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{msg.payload}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#a1d3a1",
+            "#eaea71",
+            "#b87592"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 650,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "e69d7d8d72635614",
+        "type": "ui_chart",
+        "z": "03232f3818c9517d",
+        "name": "",
+        "group": "10dbf9402ea3e73b",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 650,
+        "y": 800,
+        "wires": [
+            []
         ]
     },
     {
@@ -628,30 +751,9 @@
         "className": "msg.payload",
         "topic": "",
         "name": "show notification",
-        "x": 730,
-        "y": 780,
+        "x": 550,
+        "y": 160,
         "wires": []
-    },
-    {
-        "id": "9ecbdbfcfc1d6b43",
-        "type": "function",
-        "z": "03232f3818c9517d",
-        "name": "function 6",
-        "func": "let username = msg.payload.username;\nlet password = msg.payload.password;\nif (username == \"admin\" && password == \"admin\")\n{\n    msg.payload = \"Ngon\";\n}\nelse{\n    msg.payload = \"Ngu\";\n}\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 520,
-        "y": 780,
-        "wires": [
-            [
-                "b0267f8114c487fb",
-                "a7c9c1817de31859"
-            ]
-        ]
     },
     {
         "id": "a7c9c1817de31859",
@@ -659,45 +761,8 @@
         "z": "03232f3818c9517d",
         "name": "display_control",
         "events": "all",
-        "x": 610,
-        "y": 900,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "af229cfc7c859127",
-        "type": "inject",
-        "z": "03232f3818c9517d",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "1",
-        "topic": "",
-        "payload": "{\"tab\":\"login\"}",
-        "payloadType": "json",
-        "x": 180,
-        "y": 720,
-        "wires": [
-            [
-                "84b0453f4436116d"
-            ]
-        ]
-    },
-    {
-        "id": "84b0453f4436116d",
-        "type": "ui_ui_control",
-        "z": "03232f3818c9517d",
-        "name": "",
-        "events": "all",
-        "x": 360,
-        "y": 700,
+        "x": 430,
+        "y": 280,
         "wires": [
             []
         ]
@@ -741,13 +806,98 @@
         "wires": []
     },
     {
+        "id": "4343fb17198b6135",
+        "type": "mqtt out",
+        "z": "32f8c409253a7a7e",
+        "name": "",
+        "topic": "21127687/led",
+        "qos": "1",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "fc45193b28ea7002",
+        "x": 700,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "ebe162000908737c",
+        "type": "http request",
+        "z": "32f8c409253a7a7e",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.thingspeak.com/update?api_key=JTDQUL94ZI1EHSMJ&field1={{payload}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 710,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "07fd786944412482",
+        "type": "inject",
+        "z": "32f8c409253a7a7e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 270,
+        "y": 500,
+        "wires": [
+            [
+                "774adccfdf68c87e"
+            ]
+        ]
+    },
+    {
+        "id": "774adccfdf68c87e",
+        "type": "function",
+        "z": "32f8c409253a7a7e",
+        "name": "function 7",
+        "func": "msg.payload = Math.random() * 100;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 500,
+        "wires": [
+            [
+                "ebe162000908737c"
+            ]
+        ]
+    },
+    {
         "id": "f3cff1431b98d34b",
         "type": "ui_switch",
         "z": "32f8c409253a7a7e",
         "name": "",
         "label": "switch",
         "tooltip": "",
-        "group": "b32211bd46e7cb79",
+        "group": "10dbf9402ea3e73b",
         "order": 6,
         "width": 0,
         "height": 0,
@@ -775,11 +925,49 @@
         ]
     },
     {
-        "id": "4343fb17198b6135",
-        "type": "mqtt out",
-        "z": "32f8c409253a7a7e",
+        "id": "c6915eebbf371b66",
+        "type": "mqtt in",
+        "z": "3a25091b9f4437f5",
         "name": "",
-        "topic": "21127687/led",
+        "topic": "Bedroom",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fc45193b28ea7002",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 960,
+        "y": 800,
+        "wires": [
+            [
+                "92886d27d3fa5799"
+            ]
+        ]
+    },
+    {
+        "id": "92886d27d3fa5799",
+        "type": "debug",
+        "z": "3a25091b9f4437f5",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1160,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "2075fd527497c849",
+        "type": "mqtt out",
+        "z": "3a25091b9f4437f5",
+        "name": "",
+        "topic": "Bedroom",
         "qos": "1",
         "retain": "",
         "respTopic": "",
@@ -787,13 +975,13 @@
         "userProps": "",
         "correl": "",
         "expiry": "",
-        "broker": "b15143b64952c76c",
-        "x": 700,
-        "y": 360,
+        "broker": "fc45193b28ea7002",
+        "x": 1160,
+        "y": 880,
         "wires": []
     },
     {
-        "id": "29e33591c837504e",
+        "id": "3a91b26ff6f8ffe4",
         "type": "inject",
         "z": "3a25091b9f4437f5",
         "name": "",
@@ -811,21 +999,533 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "test",
+        "payload": "Test message",
         "payloadType": "str",
-        "x": 250,
-        "y": 200,
+        "x": 970,
+        "y": 880,
         "wires": [
             [
-                "3eac432b0876caae"
+                "2075fd527497c849"
             ]
         ]
     },
     {
-        "id": "3eac432b0876caae",
+        "id": "19d7932ed503f8a9",
+        "type": "function",
+        "z": "3a25091b9f4437f5",
+        "name": "sign-up func",
+        "func": "let email = msg.payload.email;\nlet password = msg.payload.password;\nlet firebaseAuth = flow.get(\"firebaseAuth\");\nlet firebaseApp = flow.get(\"firebaseApp\");\nlet auth = flow.get(\"auth\");\n\nfirebaseAuth.createUserWithEmailAndPassword(auth, email, password)\n    .then((userCredential) => {\n    // Signed up \n    const user = userCredential.user;\n    global.set(\"error\", \"none\")\n    // ...\n    })\n    .catch((error) => {\n        const errorCode = error.code;\n        const errorMessage = error.message;\n        // ..\n        global.set(\"error\", error.code);\n    });\nmsg.payload.error = global.get(\"error\");\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 520,
+        "wires": [
+            [
+                "fb9875c65243fc05",
+                "f6f8949f6485a118"
+            ]
+        ]
+    },
+    {
+        "id": "af229cfc7c859127",
+        "type": "inject",
+        "z": "3a25091b9f4437f5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "topic": "",
+        "payload": "greeter",
+        "payloadType": "str",
+        "x": 240,
+        "y": 100,
+        "wires": [
+            [
+                "84b0453f4436116d"
+            ]
+        ]
+    },
+    {
+        "id": "035972cb0d886278",
+        "type": "inject",
+        "z": "3a25091b9f4437f5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0",
+        "topic": "",
+        "payload": "Welcome to The night guard!",
+        "payloadType": "str",
+        "x": 230,
+        "y": 160,
+        "wires": [
+            [
+                "d0a32b66b8f5f418"
+            ]
+        ]
+    },
+    {
+        "id": "4550beebab18084b",
+        "type": "inject",
+        "z": "3a25091b9f4437f5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0",
+        "topic": "",
+        "payload": "If you're new here, select Sign up!",
+        "payloadType": "str",
+        "x": 230,
+        "y": 200,
+        "wires": [
+            [
+                "ded148cfd733426b"
+            ]
+        ]
+    },
+    {
+        "id": "4c1eb584dfcea39c",
+        "type": "inject",
+        "z": "3a25091b9f4437f5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0",
+        "topic": "",
+        "payload": "If not, select Log in!",
+        "payloadType": "str",
+        "x": 270,
+        "y": 240,
+        "wires": [
+            [
+                "2cd5ac39e5862a8d"
+            ]
+        ]
+    },
+    {
+        "id": "10bd12fd627109cc",
+        "type": "inject",
+        "z": "3a25091b9f4437f5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 240,
+        "y": 40,
+        "wires": [
+            [
+                "a674b71f2e13fafd"
+            ]
+        ]
+    },
+    {
+        "id": "76e7f41cd371b427",
+        "type": "ui_form",
+        "z": "3a25091b9f4437f5",
+        "name": "",
+        "label": "",
+        "group": "363c02f0f48a7b4f",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Enter e-mail",
+                "value": "email",
+                "type": "email",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Enter password",
+                "value": "password",
+                "type": "password",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Enter ESP ID",
+                "value": "esp_id",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "email": "",
+            "password": "",
+            "esp_id": ""
+        },
+        "payload": "",
+        "submit": "Register",
+        "cancel": "Cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 110,
+        "y": 520,
+        "wires": [
+            [
+                "19d7932ed503f8a9"
+            ]
+        ]
+    },
+    {
+        "id": "d0a32b66b8f5f418",
+        "type": "ui_text",
+        "z": "3a25091b9f4437f5",
+        "group": "262e82c563d5b316",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "",
+        "format": "<center>{{msg.payload}}</center>",
+        "layout": "row-center",
+        "className": "",
+        "style": true,
+        "font": "Gill Sans,Geneva,sans-serif",
+        "fontSize": "16",
+        "color": "#ffffff",
+        "x": 470,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "ded148cfd733426b",
+        "type": "ui_text",
+        "z": "3a25091b9f4437f5",
+        "group": "262e82c563d5b316",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": true,
+        "font": "Gill Sans,Geneva,sans-serif",
+        "fontSize": "14",
+        "color": "#ffffff",
+        "x": 470,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "2cd5ac39e5862a8d",
+        "type": "ui_text",
+        "z": "3a25091b9f4437f5",
+        "group": "262e82c563d5b316",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": true,
+        "font": "Gill Sans,Geneva,sans-serif",
+        "fontSize": "14",
+        "color": "#ffffff",
+        "x": 470,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "84b0453f4436116d",
+        "type": "ui_ui_control",
+        "z": "3a25091b9f4437f5",
+        "name": "",
+        "events": "all",
+        "x": 460,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a674b71f2e13fafd",
+        "type": "function",
+        "z": "3a25091b9f4437f5",
+        "name": "flow definitions",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nlet config = {\n    apiKey: \"AIzaSyCbIzhn2q6pcsQbQJ61C-6CzmtB2HQXZ8s\",\n    authDomain: \"hcmus-the-night-guard.firebaseapp.com\",\n    databaseURL: \"https://hcmus-the-night-guard-default-rtdb.firebaseio.com\",\n    projectId: \"hcmus-the-night-guard\",\n};\nfirebaseApp.initializeApp(config);\nconst auth = firebaseAuth.getAuth();\nflow.set(\"auth\", auth);\nflow.set(\"firebaseAuth\", firebaseAuth);\nflow.set(\"firebaseApp\", firebaseApp);",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "firebaseAuth",
+                "module": "firebase/auth"
+            },
+            {
+                "var": "firebaseApp",
+                "module": "firebase/app"
+            }
+        ],
+        "x": 450,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2e355f0960c59d95",
+        "type": "ui_button",
+        "z": "3a25091b9f4437f5",
+        "name": "",
+        "group": "262e82c563d5b316",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Sign up",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "auth-signup",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 280,
+        "y": 360,
+        "wires": [
+            [
+                "1740e86efcaadb0d"
+            ]
+        ]
+    },
+    {
+        "id": "b44a8fd7e6f383ca",
+        "type": "ui_button",
+        "z": "3a25091b9f4437f5",
+        "name": "",
+        "group": "262e82c563d5b316",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Log in",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "auth-login",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 270,
+        "y": 440,
+        "wires": [
+            [
+                "1740e86efcaadb0d"
+            ]
+        ]
+    },
+    {
+        "id": "1740e86efcaadb0d",
+        "type": "ui_ui_control",
+        "z": "3a25091b9f4437f5",
+        "name": "",
+        "events": "all",
+        "x": 480,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2e4e6a8d314395d8",
+        "type": "function",
+        "z": "3a25091b9f4437f5",
+        "name": "log-in func",
+        "func": "let email = msg.payload.email;\nlet password = msg.payload.password;\nlet firebaseAuth = flow.get(\"firebaseAuth\");\nlet firebaseApp = flow.get(\"firebaseApp\");\nlet auth = flow.get(\"auth\");\nfirebaseAuth.signInWithEmailAndPassword(auth, email, password)\n    .then((userCredential) => {\n    // Signed up \n    const user = userCredential.user;\n    global.set(\"error\", \"none\");\n    // ...\n    })\n    .catch((error) => {\n        const errorCode = error.code;\n        const errorMessage = error.message;\n        console.log(error.code);\n        if (error.code !== 'auth/email-already-in-use')\n            global.set(\"error\", error.code);\n    });\nmsg.payload.error = global.get(\"error\");\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 580,
+        "wires": [
+            [
+                "fb9875c65243fc05",
+                "f6f8949f6485a118"
+            ]
+        ]
+    },
+    {
+        "id": "9cd278a3df997bc1",
+        "type": "ui_form",
+        "z": "3a25091b9f4437f5",
+        "name": "",
+        "label": "",
+        "group": "e425100794e8572c",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Enter e-mail",
+                "value": "email",
+                "type": "email",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Enter password",
+                "value": "password",
+                "type": "password",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "email": "",
+            "password": ""
+        },
+        "payload": "",
+        "submit": "Register",
+        "cancel": "Cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 100,
+        "y": 580,
+        "wires": [
+            [
+                "2e4e6a8d314395d8"
+            ]
+        ]
+    },
+    {
+        "id": "fb9875c65243fc05",
+        "type": "function",
+        "z": "3a25091b9f4437f5",
+        "name": "error classifier",
+        "func": "console.log(msg.payload.error);\nif (msg.payload.error === \"none\")\n{\n    msg.payload = 'test';\n}\nelse\n{\n    msg.payload = \"greeter\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 520,
+        "wires": [
+            [
+                "fc52176e7adcdb14",
+                "6b46644037b36b32"
+            ]
+        ]
+    },
+    {
+        "id": "fc52176e7adcdb14",
+        "type": "ui_ui_control",
+        "z": "3a25091b9f4437f5",
+        "name": "",
+        "events": "all",
+        "x": 800,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c6f8ddec3f641799",
+        "type": "ui_toast",
+        "z": "3a25091b9f4437f5",
+        "position": "top right",
+        "displayTime": "5",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "",
+        "x": 830,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "f6f8949f6485a118",
+        "type": "function",
+        "z": "3a25091b9f4437f5",
+        "name": "notification display",
+        "func": "if (msg.payload.error === 'auth/invalid-credential') {\n    msg.payload = \"Account does not exist\\n or Invalid information\";\n}\nelse if (msg.payload.error === 'auth/email-already-in-use') {\n    msg.payload = \"E-mail already in use.\";\n}\nelse if (msg.payload.error === 'auth/weak-password') {\n    msg.payload = 'Weak password, consider a stronger one.';\n}\nelse {\n    msg.payload = \"Login successful\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 580,
+        "wires": [
+            [
+                "c6f8ddec3f641799",
+                "33ee93946a3716da"
+            ]
+        ]
+    },
+    {
+        "id": "6b46644037b36b32",
         "type": "debug",
         "z": "3a25091b9f4437f5",
-        "name": "debug 3",
+        "name": "debug 5",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -833,8 +1533,65 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 600,
-        "y": 180,
+        "x": 820,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "33ee93946a3716da",
+        "type": "debug",
+        "z": "3a25091b9f4437f5",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "aba1e4f97cec4184",
+        "type": "comment",
+        "z": "3a25091b9f4437f5",
+        "name": "Chạy 1 lần để dẫn tới trang chủ",
+        "info": "",
+        "x": 730,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "5f8955514560150e",
+        "type": "comment",
+        "z": "3a25091b9f4437f5",
+        "name": "Sign up và log-in",
+        "info": "Nếu fail thì quay lại trang chủ, cả 2 quá trình đều vậy",
+        "x": 1020,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "514b0468e04cf5c5",
+        "type": "comment",
+        "z": "3a25091b9f4437f5",
+        "name": "Test MQTT",
+        "info": "Xóa cũng được, không quan trọng",
+        "x": 740,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "eb3ef443d7d906e4",
+        "type": "comment",
+        "z": "3a25091b9f4437f5",
+        "name": "Tài liệu tham khảo",
+        "info": "https://firebase.google.com/docs/auth/web/password-auth#create_a_password-based_account",
+        "x": 1090,
+        "y": 40,
         "wires": []
     }
 ]
