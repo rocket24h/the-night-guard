@@ -205,6 +205,219 @@
         "className": ""
     },
     {
+        "id": "865a1c42bdeea9dc",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com ",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "42e9fcb1f0126366",
+        "type": "ui_numeric",
+        "z": "4bcce800e9f4e8f4",
+        "name": "",
+        "label": "Nhiệt độ",
+        "tooltip": "",
+        "group": "582515c30e2085f0",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "step": 1,
+        "className": "",
+        "x": 460,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f1758f8b4a009f3e",
+        "type": "ui_numeric",
+        "z": "4bcce800e9f4e8f4",
+        "name": "",
+        "label": "Độ ẩm",
+        "tooltip": "",
+        "group": "582515c30e2085f0",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": "20",
+        "max": "80",
+        "step": 1,
+        "className": "",
+        "x": 450,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "647d2477af278492",
+        "type": "mqtt in",
+        "z": "4bcce800e9f4e8f4",
+        "name": "data collector",
+        "topic": "",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "865a1c42bdeea9dc",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 1,
+        "x": 330,
+        "y": 240,
+        "wires": [
+            [
+                "429dcfc2f335ed3d"
+            ]
+        ]
+    },
+    {
+        "id": "e043b296c26090a2",
+        "type": "inject",
+        "z": "4bcce800e9f4e8f4",
+        "name": "subscribeData",
+        "props": [
+            {
+                "p": "action",
+                "v": "subscribe",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "v": "dataTopic",
+                "vt": "global"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 140,
+        "y": 240,
+        "wires": [
+            [
+                "647d2477af278492"
+            ]
+        ]
+    },
+    {
+        "id": "429dcfc2f335ed3d",
+        "type": "json",
+        "z": "4bcce800e9f4e8f4",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": true,
+        "x": 570,
+        "y": 240,
+        "wires": [
+            [
+                "35404d13424dd6be",
+                "13a076fb1625a89f",
+                "948f6408aaf107ce",
+                "33394e5f909d07cb"
+            ]
+        ]
+    },
+    {
+        "id": "35404d13424dd6be",
+        "type": "function",
+        "z": "4bcce800e9f4e8f4",
+        "name": "getTemp",
+        "func": "msg.payload = msg.payload.data[0]\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 160,
+        "wires": [
+            [
+                "7ccec3abf5dced76"
+            ]
+        ]
+    },
+    {
+        "id": "13a076fb1625a89f",
+        "type": "function",
+        "z": "4bcce800e9f4e8f4",
+        "name": "getHumidity",
+        "func": "msg.payload = msg.payload.data[1]\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 240,
+        "wires": [
+            [
+                "898f2b67ce468632"
+            ]
+        ]
+    },
+    {
+        "id": "948f6408aaf107ce",
+        "type": "function",
+        "z": "4bcce800e9f4e8f4",
+        "name": "getLux",
+        "func": "msg.payload = msg.payload.data[2]\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 320,
+        "wires": [
+            [
+                "f755f1b777b98967"
+            ]
+        ]
+    },
+    {
         "id": "7ccec3abf5dced76",
         "type": "ui_chart",
         "z": "4bcce800e9f4e8f4",
@@ -242,8 +455,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 520,
-        "y": 120,
+        "x": 960,
+        "y": 160,
         "wires": [
             []
         ]
@@ -286,8 +499,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 510,
-        "y": 200,
+        "x": 940,
+        "y": 240,
         "wires": [
             []
         ]
@@ -316,148 +529,143 @@
         "seg2": "10,000",
         "diff": false,
         "className": "",
-        "x": 520,
-        "y": 280,
+        "x": 960,
+        "y": 320,
         "wires": []
     },
     {
-        "id": "7406faf6ee0e56eb",
-        "type": "ui_button",
-        "z": "4bcce800e9f4e8f4",
-        "name": "",
-        "group": "582515c30e2085f0",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "label": "Tắt loa",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "false",
-        "payloadType": "bool",
-        "topic": "buttonState",
-        "topicType": "msg",
-        "x": 840,
-        "y": 260,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "42e9fcb1f0126366",
-        "type": "ui_numeric",
-        "z": "4bcce800e9f4e8f4",
-        "name": "",
-        "label": "Nhiệt độ",
-        "tooltip": "",
-        "group": "582515c30e2085f0",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "wrap": false,
-        "passthru": true,
-        "topic": "topic",
-        "topicType": "msg",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "50",
-        "step": 1,
-        "className": "",
-        "x": 840,
-        "y": 320,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "f1758f8b4a009f3e",
-        "type": "ui_numeric",
-        "z": "4bcce800e9f4e8f4",
-        "name": "",
-        "label": "Độ ẩm",
-        "tooltip": "",
-        "group": "582515c30e2085f0",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "wrap": false,
-        "passthru": true,
-        "topic": "topic",
-        "topicType": "msg",
-        "format": "{{value}}",
-        "min": "20",
-        "max": "80",
-        "step": 1,
-        "className": "",
-        "x": 830,
-        "y": 200,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "f082ac94f8a1f2ea",
-        "type": "inject",
-        "z": "4bcce800e9f4e8f4",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            },
-            {
-                "p": "timestamp",
-                "v": "",
-                "vt": "date"
-            }
-        ],
-        "repeat": "10",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "24",
-        "payloadType": "num",
-        "x": 110,
-        "y": 220,
-        "wires": [
-            [
-                "4f3449a51f5c68ec"
-            ]
-        ]
-    },
-    {
-        "id": "4f3449a51f5c68ec",
+        "id": "33394e5f909d07cb",
         "type": "function",
         "z": "4bcce800e9f4e8f4",
-        "name": "function 1",
-        "func": "msg.payload = [{\n\"series\": [\"temperature\"],\n\"data\": [\n    [{ \"x\": 1504029632890, \"y\": 5 }],[{ \"x\": 1504029633514, \"y\": 6 }],[{ \"x\": 1504029634400, \"y\": 7 }]\n],\n\"labels\": [\"\"]\n}]\nreturn msg;",
+        "name": "WriteDB",
+        "func": "let dataPoints = [];\nconst { getDatabase, ref, child, push, update } = global.get(\"firebaseDB\");\n\nlet user = global.get(\"user\");\nlet {series : labels, data} = msg.payload;\nlet timestamp = Date.now();\nfor(let i =0;i<labels.length;i++){\n    dataPoints.push({\n        \"label\" : labels[i],\n        \"data\" : data[i],\n        \"product_id\" : user.product_id,\n    });\n}\nconsole.log(dataPoints);\nconst db = getDatabase(global.get(\"app\"));\n// Write the new post's data simultaneously in the posts list and the user's post list.\nconst updates = {};\nupdates['/product_data/' + user.product_id + \"/\" + timestamp] = dataPoints;\nreturn update(ref(db), updates);",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 300,
-        "y": 220,
+        "x": 760,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "655f3c682be23a06",
+        "type": "mqtt out",
+        "z": "4bcce800e9f4e8f4",
+        "name": "buzzer",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "865a1c42bdeea9dc",
+        "x": 710,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "d6cd76b76df77bea",
+        "type": "ui_switch",
+        "z": "4bcce800e9f4e8f4",
+        "name": "",
+        "label": "Loa",
+        "tooltip": "",
+        "group": "582515c30e2085f0",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "commandTopic",
+        "topicType": "global",
+        "style": "",
+        "onvalue": "buzzer_on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "buzzer_off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 310,
+        "y": 80,
         "wires": [
             [
-                "7ccec3abf5dced76"
+                "f1a5aa4f3511d555",
+                "655f3c682be23a06"
             ]
         ]
+    },
+    {
+        "id": "f1a5aa4f3511d555",
+        "type": "function",
+        "z": "4bcce800e9f4e8f4",
+        "name": "function 1",
+        "func": "console.log(msg.topic);\nconsole.log(msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "21d87780b1c4792b",
+        "type": "mqtt in",
+        "z": "4bcce800e9f4e8f4",
+        "name": "",
+        "topic": "91728327/command",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "865a1c42bdeea9dc",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 250,
+        "y": 360,
+        "wires": [
+            [
+                "c6f3d457efe423b4"
+            ]
+        ]
+    },
+    {
+        "id": "c6f3d457efe423b4",
+        "type": "debug",
+        "z": "4bcce800e9f4e8f4",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 430,
+        "y": 360,
+        "wires": []
     },
     {
         "id": "75c620f2cd6f073b",
         "type": "function",
         "z": "43514cf8d06624f2",
         "name": "sign-up func",
-        "func": "let email = msg.payload.email;\nlet password = msg.payload.password;\nlet firebaseAuth = flow.get(\"firebaseAuth\");\nlet firebaseApp = flow.get(\"firebaseApp\");\nconst firebaseDB =global.get(\"firebaseDB\");\nlet pId = msg.payload.esp_id;\nlet auth = flow.get(\"auth\");\nfirebaseAuth.createUserWithEmailAndPassword(auth, email, password)\n    .then((userCredential) => {\n    // Signed up \n        const user = userCredential.user;\n        try{       \n            const db = firebaseDB.getDatabase(global.get(\"app\"));\n            \n            const userDataTemplate = {\n                \"product_id\": pId,\n                \"lux_line\": 10000,\n                \"temperature_line\": 30,\n                \"humdity_line\": 30,\n                \"associate_emails\" : [email]\n            };\n            console.log(userDataTemplate);\n            const updates = {};\n            updates[`/users/${user.uid}`] = userDataTemplate;\n            firebaseDB.update(firebaseDB.ref(db), updates);   \n        }\n        catch(e){\n            console.log(e);\n            console.log(`/users/${user.uid}`)\n        }\n        global.set(\"error\", \"sign_up_success\")\n        // ...\n    })\n    .catch((error) => {\n        const errorCode = error.code;\n        const errorMessage = error.message;\n        // ..\n        console.log(error);\n        global.set(\"error\", error.code);\n    });\nmsg.payload.error = global.get(\"error\");\nreturn msg;",
+        "func": "let email = msg.payload.email;\nlet password = msg.payload.password;\nlet firebaseAuth = flow.get(\"firebaseAuth\");\nlet firebaseApp = flow.get(\"firebaseApp\");\nconst firebaseDB =global.get(\"firebaseDB\");\nlet pId = msg.payload.esp_id;\nlet auth = flow.get(\"auth\");\nfirebaseAuth.createUserWithEmailAndPassword(auth, email, password)\n    .then((userCredential) => {\n    // Signed up \n        const user = userCredential.user;\n        try{       \n            const db = firebaseDB.getDatabase(global.get(\"app\"));\n            \n            const userDataTemplate = {\n                \"product_id\": pId,\n                \"lux_line\": 10000,\n                \"temperature_line\": 30,\n                \"humdity_line\": 30,\n                \"associate_emails\" : [email]\n            };\n            const updates = {};\n            updates[`/users/${user.uid}`] = userDataTemplate;\n            firebaseDB.update(firebaseDB.ref(db), updates);   \n        }\n        catch(e){\n            console.log(e);\n        }\n        global.set(\"error\", \"sign_up_success\")\n        // ...\n    })\n    .catch((error) => {\n        const errorCode = error.code;\n        const errorMessage = error.message;\n        // ..\n        console.log(error);\n        global.set(\"error\", error.code);\n    });\nmsg.payload.error = global.get(\"error\");\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -643,7 +851,7 @@
         },
         "payload": "",
         "submit": "Register",
-        "cancel": "Cancel",
+        "cancel": "",
         "topic": "topic",
         "topicType": "msg",
         "splitLayout": "",
@@ -835,7 +1043,7 @@
         "type": "function",
         "z": "43514cf8d06624f2",
         "name": "log-in func",
-        "func": "let email = msg.payload.email;\nlet password = msg.payload.password;\nlet firebaseAuth = flow.get(\"firebaseAuth\");\nlet firebaseApp = flow.get(\"firebaseApp\");\nconst firebaseDB = global.get(\"firebaseDB\");\nlet auth = flow.get(\"auth\");\nfirebaseAuth.signInWithEmailAndPassword(auth, email, password)\n    .then((userCredential) => {\n    // Signed up \n        const user = userCredential.user;\n        const dbRef = firebaseDB.ref(firebaseDB.getDatabase(global.get(\"app\")));\n        firebaseDB.get(firebaseDB.child(dbRef, `users/${user.uid}`)).then((snapshot) => {\n            if (snapshot.exists()) {\n                let currUser = snapshot.val();\n                currUser['email'] = email;\n                currUser['uid'] = user.uid;\n                console.log(\"login here\");\n                console.log(currUser);\n                global.set(\"user\",currUser);\n                console.log(snapshot.val());\n                global.set(\"error\", \"none\");\n            } else {\n                console.log(\"No data available\");\n                global.set(\"error\",\"NO ACCOUNT\");\n            }\n        }).catch((error) => {\n            global.set(\"error\",error);\n        });\n    // ...\n    })\n    .catch((error) => {\n        const errorCode = error.code;\n        const errorMessage = error.message;\n        console.log(error.code);\n        if (error.code !== 'auth/email-already-in-use')\n            global.set(\"error\", error.code);\n    });\nmsg.payload.error = global.get(\"error\");\nreturn msg;",
+        "func": "let email = msg.payload.email;\nlet password = msg.payload.password;\nlet firebaseAuth = flow.get(\"firebaseAuth\");\nlet firebaseApp = flow.get(\"firebaseApp\");\nconst firebaseDB = global.get(\"firebaseDB\");\nlet auth = flow.get(\"auth\");\nfirebaseAuth.signInWithEmailAndPassword(auth, email, password)\n    .then((userCredential) => {\n    // Signed up \n        const user = userCredential.user;\n        const dbRef = firebaseDB.ref(firebaseDB.getDatabase(global.get(\"app\")));\n        firebaseDB.get(firebaseDB.child(dbRef, `users/${user.uid}`)).then((snapshot) => {\n            if (snapshot.exists()) {\n                let currUser = snapshot.val();\n                currUser['email'] = email;\n                currUser['uid'] = user.uid;\n                console.log(\"login here\");\n                console.log(currUser);\n                global.set(\"user\",currUser);\n                global.set(\"dataTopic\",`${currUser.product_id}/datas`);\n                global.set(\"gasTopic\", `${currUser.product_id}/gasState`);\n                global.set(\"commandTopic\",`${currUser.product_id}/command`);\n                console.log(snapshot.val());\n                global.set(\"error\", \"none\");\n            } else {\n                global.set(\"error\",\"NO ACCOUNT\");\n            }\n        }).catch((error) => {\n            global.set(\"error\",error);\n        });\n    // ...\n    })\n    .catch((error) => {\n        const errorCode = error.code;\n        const errorMessage = error.message;\n        console.log(error.code);\n        if (error.code !== 'auth/email-already-in-use')\n            global.set(\"error\", error.code);\n    });\nmsg.payload.error = global.get(\"error\");\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -883,7 +1091,7 @@
         },
         "payload": "",
         "submit": "Login",
-        "cancel": "Cancel",
+        "cancel": "",
         "topic": "topic",
         "topicType": "msg",
         "splitLayout": "",
@@ -901,7 +1109,7 @@
         "type": "function",
         "z": "43514cf8d06624f2",
         "name": "error classifier",
-        "func": "if (msg.payload.error === \"none\")\n{\n    msg.payload = 'Home';\n}\nelse\n{\n    msg.payload = \"greeter\";\n}\n\nreturn msg;",
+        "func": "console.log(msg.payload.error);\nif (msg.payload.error === \"none\")\n{\n    msg.payload = 'Home';\n}\nelse\n{\n    msg.payload = \"greeter\";\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1013,24 +1221,5 @@
         "x": 570,
         "y": 560,
         "wires": []
-    },
-    {
-        "id": "a62bcc0a400fe533",
-        "type": "mqtt in",
-        "z": "43514cf8d06624f2",
-        "name": "",
-        "topic": "",
-        "qos": "2",
-        "datatype": "auto-detect",
-        "broker": "",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 990,
-        "y": 260,
-        "wires": [
-            []
-        ]
     }
 ]
