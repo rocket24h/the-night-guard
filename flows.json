@@ -246,6 +246,78 @@
         "className": ""
     },
     {
+        "id": "0f0c6957a9c255c9",
+        "type": "global-config",
+        "name": "global-config",
+        "env": []
+    },
+    {
+        "id": "5812422ee6f7e241",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com ",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "a3ef2aea75afe13c",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "1a4e958f159bd7b2",
+        "type": "ui_tab",
+        "name": "auth-login",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": true
+    },
+    {
+        "id": "db9b6d2e79a62ef5",
+        "type": "ui_tab",
+        "name": "auth-signup",
+        "icon": "dashboard",
+        "order": 5,
+        "disabled": false,
+        "hidden": true
+    },
+    {
+        "id": "ae6075809722a6b2",
+        "type": "ui_tab",
+        "name": "greeter",
+        "icon": "dashboard",
+        "order": 5,
+        "disabled": false,
+        "hidden": true
+    },
+    {
         "id": "1cb085b3d4025fdd",
         "type": "mqtt in",
         "z": "8728806be4ae285c",
@@ -281,7 +353,8 @@
                 "7e2abccd2d2325d3",
                 "3a7cbcf6b6fef00c",
                 "a92d9d2136dc5e9d",
-                "8cd165ad05949401"
+                "8cd165ad05949401",
+                "a68091855056aee5"
             ]
         ]
     },
@@ -628,26 +701,6 @@
         ]
     },
     {
-        "id": "383ebbccc65e0cc4",
-        "type": "function",
-        "z": "8728806be4ae285c",
-        "name": "updateLine",
-        "func": "let user = global.get(\"user\");\nconst firebaseDB = global.get(\"firebaseDB\");\nlet limits = {\n    \"temperature_line\" : user.temperature_line, \n    \"humidity_line\": user.humidity_line,\n    \"lux_line\": user.lux_line\n}\n\nconst db = firebaseDB.getDatabase(global.get(\"app\"));\n\nmsg.payload = {\n    \"lux_line\": user.lux_line,\n    \"temperature_line\": user.temperature_line,\n    \"humdity_line\": user.humidity_line\n}\n\nmsg.topic = `${user.product_id}/limits`\n\nconst userDataTemplate = {\n    \"product_id\": user.product_id,\n    \"lux_line\": user.lux_line,\n    \"temperature_line\": user.temperature_line,\n    \"humdity_line\": user.humidity_line,\n    \"associate_emails\" : user.associate_emails\n};\nconst updates = {};\nupdates[`/users/${user.uid}`] = userDataTemplate;\nfirebaseDB.update(firebaseDB.ref(db), updates);\n\n\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 830,
-        "y": 760,
-        "wires": [
-            [
-                "84efea4bd94bc7f9"
-            ]
-        ]
-    },
-    {
         "id": "8ebdf6baa5ae460b",
         "type": "ui_slider",
         "z": "8728806be4ae285c",
@@ -882,8 +935,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 810,
-        "y": 960,
+        "x": 1010,
+        "y": 940,
         "wires": [
             [
                 "d0bb72da73424ddd"
@@ -909,8 +962,8 @@
         "topic": "topic",
         "topicType": "msg",
         "className": "",
-        "x": 810,
-        "y": 1060,
+        "x": 970,
+        "y": 1020,
         "wires": [
             [
                 "eeae7c3ea7540cdc"
@@ -929,8 +982,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1010,
-        "y": 1060,
+        "x": 1170,
+        "y": 1020,
         "wires": [
             []
         ]
@@ -955,8 +1008,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 170,
-        "y": 1140,
+        "x": 330,
+        "y": 1100,
         "wires": [
             [
                 "715baa210f9cee75"
@@ -968,15 +1021,15 @@
         "type": "function",
         "z": "8728806be4ae285c",
         "name": "delete associated emails",
-        "func": "let firebaseDB = global.get(\"firebaseDB\");\nlet removeEmailList = global.get(\"email_list\");\nlet currEmailList = global.get(\"user\")['associate_emails'];\nlet new_email_list = currEmailList.filter(i => !removeEmailList.includes(i));\n\nlet db = firebaseDB.getDatabase();\nlet user = global.get(\"user\");\nconst userDataTemplate = {\n    \"product_id\": user.product_id,\n    \"lux_line\": user.lux_line,\n    \"temperature_line\": user.temperature_line,\n    \"humdity_line\": user.humdity_line,\n    \"associate_emails\": new_email_list\n};\n\nconst updates = {};\nupdates[`/users/${user.uid}`] = userDataTemplate;\nfirebaseDB.update(firebaseDB.ref(db), updates);\nuser.associate_emails = new_email_list;\n\nmsg.payload = new_email_list;\nreturn msg;",
+        "func": "let firebaseDB = global.get(\"firebaseDB\");\nlet removeEmailList = global.get(\"email_list\");\nlet currEmailList = global.get(\"user\")['associate_emails'];\nlet new_email_list = currEmailList.filter(i => !removeEmailList.includes(i));\n\nlet db = firebaseDB.getDatabase();\nlet user = global.get(\"user\");\nconst userDataTemplate = {\n    \"product_id\": user.product_id,\n    \"lux_line\": user.lux_line,\n    \"temperature_line\": user.temperature_line,\n    \"humidity_line\": user.humidity_line,\n    \"associate_emails\": new_email_list\n};\n\nconst updates = {};\nupdates[`/users/${user.uid}`] = userDataTemplate;\nfirebaseDB.update(firebaseDB.ref(db), updates);\nuser.associate_emails = new_email_list;\n\nmsg.payload = new_email_list;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 410,
-        "y": 1140,
+        "x": 570,
+        "y": 1100,
         "wires": [
             [
                 "55cc3dad47502ff1",
@@ -997,8 +1050,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 640,
-        "y": 1140,
+        "x": 800,
+        "y": 1100,
         "wires": []
     },
     {
@@ -1030,7 +1083,7 @@
         "topicType": "msg",
         "splitLayout": false,
         "className": "",
-        "x": 130,
+        "x": 170,
         "y": 960,
         "wires": [
             [
@@ -1050,8 +1103,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 510,
-        "y": 1000,
+        "x": 670,
+        "y": 960,
         "wires": [
             [
                 "d2e255039df31a5e"
@@ -1070,8 +1123,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 230,
-        "y": 1060,
+        "x": 390,
+        "y": 960,
         "wires": [
             [
                 "f2e1afcbc763ef26"
@@ -1117,6 +1170,230 @@
         "wires": [
             [
                 "383ebbccc65e0cc4"
+            ]
+        ]
+    },
+    {
+        "id": "a68091855056aee5",
+        "type": "debug",
+        "z": "8728806be4ae285c",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "ec1e8746ce06f0ec",
+        "type": "e-mail",
+        "z": "8728806be4ae285c",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "",
+        "x": 1310,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "ae2f8dd104bc9360",
+        "type": "mqtt in",
+        "z": "8728806be4ae285c",
+        "name": "email notification",
+        "topic": "",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "5812422ee6f7e241",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 1,
+        "x": 520,
+        "y": 1360,
+        "wires": [
+            [
+                "36c92b58677256a6"
+            ]
+        ]
+    },
+    {
+        "id": "215b550aa83ca111",
+        "type": "inject",
+        "z": "8728806be4ae285c",
+        "name": "subcribeNotification",
+        "props": [
+            {
+                "p": "action",
+                "v": "subscribe",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 100,
+        "y": 1360,
+        "wires": [
+            [
+                "99da4c201f2354da"
+            ]
+        ]
+    },
+    {
+        "id": "36c92b58677256a6",
+        "type": "switch",
+        "z": "8728806be4ae285c",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 770,
+        "y": 1340,
+        "wires": [
+            [
+                "8a3c5714d65a3e45"
+            ],
+            [
+                "df4a299d7793eb67"
+            ],
+            [
+                "5b8e459415e8e78c"
+            ]
+        ]
+    },
+    {
+        "id": "8a3c5714d65a3e45",
+        "type": "function",
+        "z": "8728806be4ae285c",
+        "name": "writeEmailTemp",
+        "func": "let users = global.get(\"user\"); \nlet emails = users.associate_emails; \n\n\nconsole.log(emails); \n\nmsg.topic = \"High temperature\"\nmsg.payload = \"WARNING YOUR ROOM IS IN A HIGH TEMPERATURE\"\nmsg.bcc = emails; \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 1260,
+        "wires": [
+            [
+                "ec1e8746ce06f0ec"
+            ]
+        ]
+    },
+    {
+        "id": "df4a299d7793eb67",
+        "type": "function",
+        "z": "8728806be4ae285c",
+        "name": "writeEmailHumid",
+        "func": "let users = global.get(\"user\"); \nlet emails = users.associate_emails; \n\n\nconsole.log(emails); \n\nmsg.topic = \"Low Humidity\"\nmsg.payload = \"WARNING YOUR ROOM IS LOW IN HUMIDITY\"\nmsg.bcc = emails; \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 1340,
+        "wires": [
+            [
+                "ec1e8746ce06f0ec"
+            ]
+        ]
+    },
+    {
+        "id": "5b8e459415e8e78c",
+        "type": "function",
+        "z": "8728806be4ae285c",
+        "name": "writeEmailLux",
+        "func": "let users = global.get(\"user\"); \nlet emails = users.associate_emails; \n\n\nconsole.log(emails); \n\nmsg.topic = \"High Lux\"\nmsg.payload = \"WARINGING YOUR LIGHT BRIGHTNESS IS TOO HIGH\"\nmsg.bcc = emails; \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 1420,
+        "wires": [
+            [
+                "ec1e8746ce06f0ec"
+            ]
+        ]
+    },
+    {
+        "id": "99da4c201f2354da",
+        "type": "function",
+        "z": "8728806be4ae285c",
+        "name": "validateLogin",
+        "func": "while(global.get(\"state\") === 0){\n await new Promise(r => setTimeout(r, 100));\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 1360,
+        "wires": [
+            [
+                "ae2f8dd104bc9360"
+            ]
+        ]
+    },
+    {
+        "id": "383ebbccc65e0cc4",
+        "type": "function",
+        "z": "8728806be4ae285c",
+        "name": "updateLine",
+        "func": "let user = global.get(\"user\");\nconst firebaseDB = global.get(\"firebaseDB\");\nlet limits = {\n    \"temperature_line\" : user.temperature_line, \n    \"humidity_line\": user.humidity_line,\n    \"lux_line\": user.lux_line\n}\n\nconst db = firebaseDB.getDatabase(global.get(\"app\"));\n\nmsg.payload = {\n    \"lux_line\": user.lux_line,\n    \"temperature_line\": user.temperature_line,\n    \"humdity_line\": user.humidity_line\n}\n\nmsg.topic = `${user.product_id}/limits`\n\nconst userDataTemplate = {\n    \"product_id\": user.product_id,\n    \"lux_line\": user.lux_line,\n    \"temperature_line\": user.temperature_line,\n    \"humdity_line\": user.humidity_line,\n    \"associate_emails\" : user.associate_emails\n};\nconst updates = {};\nupdates[`/users/${user.uid}`] = userDataTemplate;\nfirebaseDB.update(firebaseDB.ref(db), updates);\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 760,
+        "wires": [
+            [
+                "84efea4bd94bc7f9"
             ]
         ]
     },
