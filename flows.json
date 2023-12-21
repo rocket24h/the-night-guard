@@ -283,41 +283,6 @@
         "sessionExpiry": ""
     },
     {
-        "id": "a3ef2aea75afe13c",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "1a4e958f159bd7b2",
-        "type": "ui_tab",
-        "name": "auth-login",
-        "icon": "dashboard",
-        "order": 4,
-        "disabled": false,
-        "hidden": true
-    },
-    {
-        "id": "db9b6d2e79a62ef5",
-        "type": "ui_tab",
-        "name": "auth-signup",
-        "icon": "dashboard",
-        "order": 5,
-        "disabled": false,
-        "hidden": true
-    },
-    {
-        "id": "ae6075809722a6b2",
-        "type": "ui_tab",
-        "name": "greeter",
-        "icon": "dashboard",
-        "order": 5,
-        "disabled": false,
-        "hidden": true
-    },
-    {
         "id": "1cb085b3d4025fdd",
         "type": "mqtt in",
         "z": "8728806be4ae285c",
@@ -600,7 +565,7 @@
         "y": 80,
         "wires": [
             [
-                "d5f104c583a50d03"
+                "7c401722af830d45"
             ]
         ]
     },
@@ -665,7 +630,7 @@
         "type": "function",
         "z": "8728806be4ae285c",
         "name": "setHumidityLine",
-        "func": "let user = global.get(\"user\");\n\nuser.humidity_line = msg.payload\n\nglobal.set(\"user\",user)\nreturn msg;",
+        "func": "let user = global.get(\"user\");\n\nuser.humdity_line = msg.payload\n\nglobal.set(\"user\",user)\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -712,7 +677,7 @@
         "width": 0,
         "height": 0,
         "passthru": true,
-        "outs": "all",
+        "outs": "end",
         "topic": "topic",
         "topicType": "msg",
         "min": 0,
@@ -731,7 +696,7 @@
         "id": "b764057de639b9f4",
         "type": "function",
         "z": "8728806be4ae285c",
-        "name": "setTempLine",
+        "name": "setLuxLine",
         "func": "let user = global.get(\"user\");\n\nuser.lux_line = msg.payload\n\nglobal.set(\"user\",user)\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
@@ -863,10 +828,10 @@
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
-        "topic": "",
+        "topic": "asd",
         "payload": "",
         "payloadType": "date",
-        "x": 670,
+        "x": 680,
         "y": 540,
         "wires": [
             [
@@ -1021,7 +986,7 @@
         "type": "function",
         "z": "8728806be4ae285c",
         "name": "delete associated emails",
-        "func": "let firebaseDB = global.get(\"firebaseDB\");\nlet removeEmailList = global.get(\"email_list\");\nlet currEmailList = global.get(\"user\")['associate_emails'];\nlet new_email_list = currEmailList.filter(i => !removeEmailList.includes(i));\n\nlet db = firebaseDB.getDatabase();\nlet user = global.get(\"user\");\nconst userDataTemplate = {\n    \"product_id\": user.product_id,\n    \"lux_line\": user.lux_line,\n    \"temperature_line\": user.temperature_line,\n    \"humidity_line\": user.humidity_line,\n    \"associate_emails\": new_email_list\n};\n\nconst updates = {};\nupdates[`/users/${user.uid}`] = userDataTemplate;\nfirebaseDB.update(firebaseDB.ref(db), updates);\nuser.associate_emails = new_email_list;\n\nmsg.payload = new_email_list;\nreturn msg;",
+        "func": "let firebaseDB = global.get(\"firebaseDB\");\nlet removeEmailList = global.get(\"email_list\");\nlet currEmailList = global.get(\"user\")['associate_emails'];\nlet new_email_list = currEmailList.filter(i => !removeEmailList.includes(i));\n\nlet db = firebaseDB.getDatabase();\nlet user = global.get(\"user\");\nconst userDataTemplate = {\n    \"product_id\": user.product_id,\n    \"lux_line\": user.lux_line,\n    \"temperature_line\": user.temperature_line,\n    \"humdity_line\": user.humdity_line,\n    \"associate_emails\": new_email_list\n};\n\nconst updates = {};\nupdates[`/users/${user.uid}`] = userDataTemplate;\nfirebaseDB.update(firebaseDB.ref(db), updates);\nuser.associate_emails = new_email_list;\n\nmsg.payload = new_email_list;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1032,27 +997,9 @@
         "y": 1100,
         "wires": [
             [
-                "55cc3dad47502ff1",
                 "d2e255039df31a5e"
             ]
         ]
-    },
-    {
-        "id": "55cc3dad47502ff1",
-        "type": "debug",
-        "z": "8728806be4ae285c",
-        "name": "debug 7",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 800,
-        "y": 1100,
-        "wires": []
     },
     {
         "id": "2750bbafdd004b79",
@@ -1096,7 +1043,7 @@
         "type": "function",
         "z": "8728806be4ae285c",
         "name": "update associated emails",
-        "func": "let email = msg.payload.email;\nlet firebaseDB = global.get(\"firebaseDB\");\nlet db = firebaseDB.getDatabase(global.get(\"app\"));\nlet user = global.get(\"user\");\ntry{\n    \n    user.associate_emails.push(email);\n    //console.log(\"list email moi  : \",new_email_list);\n    const userTemplate = {\n        \"temperature_line\" : user.temperature_line,\n        \"humidity_line\" : user.humdity_line,\n        \"lux_line\" : user.lux_line,\n        \"product_id\" : user.product_id,\n        \"associate_emails\" : user.associate_emails\n    };\n    const updates = {};\n    updates[`/users/${user.uid}`] = userTemplate;\n    firebaseDB.update(firebaseDB.ref(db), updates);\n}catch(e){\n    console.log(e);\n}\nreturn msg;",
+        "func": "let email = msg.payload.email;\nlet firebaseDB = global.get(\"firebaseDB\");\nlet db = firebaseDB.getDatabase(global.get(\"app\"));\nlet user = global.get(\"user\");\ntry{\n    \n    user.associate_emails.push(email);\n    //console.log(\"list email moi  : \",new_email_list);\n    const userTemplate = {\n        \"temperature_line\" : user.temperature_line,\n        \"humdity_line\" : user.humdity_line,\n        \"lux_line\" : user.lux_line,\n        \"product_id\" : user.product_id,\n        \"associate_emails\" : user.associate_emails\n    };\n    const updates = {};\n    updates[`/users/${user.uid}`] = userTemplate;\n    firebaseDB.update(firebaseDB.ref(db), updates);\n}catch(e){\n    console.log(e);\n}\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1190,23 +1137,6 @@
         "wires": []
     },
     {
-        "id": "ec1e8746ce06f0ec",
-        "type": "e-mail",
-        "z": "8728806be4ae285c",
-        "server": "smtp.gmail.com",
-        "port": "465",
-        "authtype": "BASIC",
-        "saslformat": true,
-        "token": "oauth2Response.access_token",
-        "secure": true,
-        "tls": true,
-        "name": "",
-        "dname": "",
-        "x": 1310,
-        "y": 1340,
-        "wires": []
-    },
-    {
         "id": "ae2f8dd104bc9360",
         "type": "mqtt in",
         "z": "8728806be4ae285c",
@@ -1219,11 +1149,12 @@
         "rap": true,
         "rh": 0,
         "inputs": 1,
-        "x": 520,
-        "y": 1360,
+        "x": 500,
+        "y": 1380,
         "wires": [
             [
-                "36c92b58677256a6"
+                "36c92b58677256a6",
+                "23373ad1ab83a8ea"
             ]
         ]
     },
@@ -1248,8 +1179,8 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 100,
-        "y": 1360,
+        "x": 140,
+        "y": 1260,
         "wires": [
             [
                 "99da4c201f2354da"
@@ -1284,7 +1215,7 @@
         "repair": false,
         "outputs": 3,
         "x": 770,
-        "y": 1340,
+        "y": 1360,
         "wires": [
             [
                 "8a3c5714d65a3e45"
@@ -1310,7 +1241,7 @@
         "finalize": "",
         "libs": [],
         "x": 1100,
-        "y": 1260,
+        "y": 1280,
         "wires": [
             [
                 "ec1e8746ce06f0ec"
@@ -1330,7 +1261,7 @@
         "finalize": "",
         "libs": [],
         "x": 1110,
-        "y": 1340,
+        "y": 1360,
         "wires": [
             [
                 "ec1e8746ce06f0ec"
@@ -1350,7 +1281,7 @@
         "finalize": "",
         "libs": [],
         "x": 1100,
-        "y": 1420,
+        "y": 1440,
         "wires": [
             [
                 "ec1e8746ce06f0ec"
@@ -1362,7 +1293,7 @@
         "type": "function",
         "z": "8728806be4ae285c",
         "name": "validateLogin",
-        "func": "while(global.get(\"state\") === 0){\n await new Promise(r => setTimeout(r, 100));\n}\n\nreturn msg;",
+        "func": "while(global.get(\"state\") === 0){\n await new Promise(r => setTimeout(r, 100));\n\n}\n\nmsg.topic = `${global.get(\"user\").product_id}/notify`;\nmsg.action = \"subscribe\";\n\nconsole.log(msg.topic);\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1382,7 +1313,7 @@
         "type": "function",
         "z": "8728806be4ae285c",
         "name": "updateLine",
-        "func": "let user = global.get(\"user\");\nconst firebaseDB = global.get(\"firebaseDB\");\nlet limits = {\n    \"temperature_line\" : user.temperature_line, \n    \"humidity_line\": user.humidity_line,\n    \"lux_line\": user.lux_line\n}\n\nconst db = firebaseDB.getDatabase(global.get(\"app\"));\n\nmsg.payload = {\n    \"lux_line\": user.lux_line,\n    \"temperature_line\": user.temperature_line,\n    \"humdity_line\": user.humidity_line\n}\n\nmsg.topic = `${user.product_id}/limits`\n\nconst userDataTemplate = {\n    \"product_id\": user.product_id,\n    \"lux_line\": user.lux_line,\n    \"temperature_line\": user.temperature_line,\n    \"humdity_line\": user.humidity_line,\n    \"associate_emails\" : user.associate_emails\n};\nconst updates = {};\nupdates[`/users/${user.uid}`] = userDataTemplate;\nfirebaseDB.update(firebaseDB.ref(db), updates);\n\n\n\nreturn msg;",
+        "func": "let user = global.get(\"user\");\nconst firebaseDB = global.get(\"firebaseDB\");\nlet limits = {\n    \"temperature_line\" : user.temperature_line, \n    \"humidity_line\": user.humdity_line,\n    \"lux_line\": user.lux_line\n}\n\nconst db = firebaseDB.getDatabase(global.get(\"app\"));\n\nmsg.payload = {\n    \"lux_line\": user.lux_line,\n    \"temperature_line\": user.temperature_line,\n    \"humdity_line\": user.humdity_line\n}\n\nmsg.topic = `${user.product_id}/limits`\n\nconst userDataTemplate = {\n    \"product_id\": user.product_id,\n    \"lux_line\": user.lux_line,\n    \"temperature_line\": user.temperature_line,\n    \"humdity_line\": user.humdity_line,\n    \"associate_emails\" : user.associate_emails\n};\nconst updates = {};\nupdates[`/users/${user.uid}`] = userDataTemplate;\nfirebaseDB.update(firebaseDB.ref(db), updates);\n\n\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1398,19 +1329,73 @@
         ]
     },
     {
-        "id": "862b289484831b9e",
+        "id": "ec1e8746ce06f0ec",
+        "type": "e-mail",
+        "z": "8728806be4ae285c",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "",
+        "x": 1400,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "7c401722af830d45",
         "type": "function",
-        "z": "683838d755eb7bc9",
-        "name": "sign-up func",
-        "func": "let email = msg.payload.email;\nlet password = msg.payload.password;\nlet firebaseAuth = flow.get(\"firebaseAuth\");\nlet firebaseApp = flow.get(\"firebaseApp\");\nconst firebaseDB =global.get(\"firebaseDB\");\nlet pId = msg.payload.esp_id;\nlet auth = flow.get(\"auth\");\nfirebaseAuth.createUserWithEmailAndPassword(auth, email, password)\n    .then((userCredential) => {\n    // Signed up \n        const user = userCredential.user;\n        try{       \n            const db = firebaseDB.getDatabase(global.get(\"app\"));\n            const userDataTemplate = {\n                \"product_id\": pId,\n                \"lux_line\": 10000,\n                \"temperature_line\": 30,\n                \"humdity_line\": 30,\n                \"associate_emails\" : [email]\n            };\n            const updates = {};\n            updates[`/users/${user.uid}`] = userDataTemplate;\n            firebaseDB.update(firebaseDB.ref(db), updates);   \n            global.set(\"error\", \"sign_up_success\");\n        }\n        catch(e){\n            console.log(e);\n            global.set(\"error\", e.code);\n        }\n        \n        // ...\n    })\n    .catch((error) => {\n        const errorCode = error.code;\n        // ..\n        console.log(errorCode);\n        global.set(\"error\", errorCode);\n    });\nreturn msg;",
+        "z": "8728806be4ae285c",
+        "name": "validateLogin",
+        "func": "while(global.get(\"state\") === 0){\n await new Promise(r => setTimeout(r, 100));\n}\nmsg.topic = global.get(\"commandTopic\");\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 330,
-        "y": 660,
+        "x": 490,
+        "y": 80,
+        "wires": [
+            [
+                "d5f104c583a50d03"
+            ]
+        ]
+    },
+    {
+        "id": "23373ad1ab83a8ea",
+        "type": "debug",
+        "z": "8728806be4ae285c",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "862b289484831b9e",
+        "type": "function",
+        "z": "683838d755eb7bc9",
+        "name": "sign-up func",
+        "func": "let email = msg.payload.email;\nlet password = msg.payload.password;\nlet firebaseAuth = flow.get(\"firebaseAuth\");\nlet firebaseApp = flow.get(\"firebaseApp\");\nconst firebaseDB =global.get(\"firebaseDB\");\nlet pId = msg.payload.esp_id;\nlet auth = flow.get(\"auth\");\nfirebaseAuth.createUserWithEmailAndPassword(auth, email, password)\n    .then((userCredential) => {\n    // Signed up \n        const user = userCredential.user;\n        try{       \n            const db = firebaseDB.getDatabase(global.get(\"app\"));\n            const userDataTemplate = {\n                \"product_id\": pId,\n                \"lux_line\": 10000,\n                \"temperature_line\": 30,\n                \"humdity_line\": 30,\n                \"associate_emails\" : [email]\n            };\n            const updates = {};\n            updates[`/users/${user.uid}`] = userDataTemplate;\n            firebaseDB.update(firebaseDB.ref(db), updates);   \n            global.set(\"error\", \"sign_up_success\");\n            \n        }\n        catch(e){\n            console.log(e);\n            global.set(\"error\", e.code);\n        }\n        \n        // ...\n    })\n    .catch((error) => {\n        const errorCode = error.code;\n        // ..\n        console.log(errorCode);\n        global.set(\"error\", errorCode);\n    });\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 640,
         "wires": [
             [
                 "05aa8384d9210938",
@@ -1432,7 +1417,7 @@
         "repeat": "",
         "crontab": "",
         "once": true,
-        "onceDelay": "0.1",
+        "onceDelay": "0.05",
         "topic": "",
         "payload": "greeter",
         "payloadType": "str",
@@ -1727,8 +1712,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 280,
-        "y": 360,
+        "x": 220,
+        "y": 340,
         "wires": [
             [
                 "f69527460697f79e"
@@ -1755,8 +1740,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 290,
-        "y": 420,
+        "x": 230,
+        "y": 400,
         "wires": [
             [
                 "f69527460697f79e"
@@ -1769,8 +1754,8 @@
         "z": "683838d755eb7bc9",
         "name": "",
         "events": "all",
-        "x": 480,
-        "y": 380,
+        "x": 420,
+        "y": 360,
         "wires": [
             []
         ]
@@ -1780,15 +1765,15 @@
         "type": "function",
         "z": "683838d755eb7bc9",
         "name": "log-in func",
-        "func": "let email = msg.payload.email;\nlet password = msg.payload.password;\nlet firebaseAuth = flow.get(\"firebaseAuth\");\nlet firebaseApp = flow.get(\"firebaseApp\");\nconst firebaseDB = global.get(\"firebaseDB\");\nlet auth = flow.get(\"auth\");\nfirebaseAuth.signInWithEmailAndPassword(auth, email, password)\n    .then((userCredential) => {\n    // Signed up \n        const user = userCredential.user;\n        const dbRef = firebaseDB.ref(firebaseDB.getDatabase(global.get(\"app\")));\n        firebaseDB.get(firebaseDB.child(dbRef, `users/${user.uid}`)).then((snapshot) => {\n            if (snapshot.exists()) {\n                let currUser = snapshot.val();\n                currUser['email'] = email;\n                currUser['uid'] = user.uid;\n                console.log(\"login here\");\n                console.log(currUser);\n                global.set(\"user\",currUser);\n                global.set(\"dataTopic\",`${currUser.product_id}/datas`);\n                global.set(\"gasTopic\", `${currUser.product_id}/gasState`);\n                global.set(\"commandTopic\",`${currUser.product_id}/command`);\n                global.set(\"error\", \"none\");\n            } else {\n                global.set(\"error\",\"NO ACCOUNT\");\n            }\n        }).catch((error) => {\n            global.set(\"error\", error);\n        });\n    // ...\n    })\n    .catch((error) => {\n        const errorCode = error.code;\n        const errorMessage = error.message;\n        console.log(error.code);\n        if (error.code !== 'auth/email-already-in-use')\n            global.set(\"error\", error.code);\n    });\nmsg.payload.error = global.get(\"error\");\nreturn msg;",
+        "func": "let email = msg.payload.email;\nlet password = msg.payload.password;\nlet firebaseAuth = flow.get(\"firebaseAuth\");\nlet firebaseApp = flow.get(\"firebaseApp\");\nconst firebaseDB = global.get(\"firebaseDB\");\nlet auth = flow.get(\"auth\");\nfirebaseAuth.signInWithEmailAndPassword(auth, email, password)\n    .then((userCredential) => {\n    // Signed up \n        const user = userCredential.user;\n        const dbRef = firebaseDB.ref(firebaseDB.getDatabase(global.get(\"app\")));\n        firebaseDB.get(firebaseDB.child(dbRef, `users/${user.uid}`)).then((snapshot) => {\n            if (snapshot.exists()) {\n                let currUser = snapshot.val();\n                currUser['email'] = email;\n                currUser['uid'] = user.uid;\n                global.set(\"user\",currUser);\n                global.set(\"dataTopic\",`${currUser.product_id}/datas`);\n                global.set(\"commandTopic\",`${currUser.product_id}/command`);\n                global.set(\"error\", \"none\");\n                global.set(\"state\", 1);\n            } else {\n                global.set(\"error\",\"NO ACCOUNT\");\n            }\n        }).catch((error) => {\n            global.set(\"error\", error);\n        });\n    // ...\n    })\n    .catch((error) => {\n        const errorCode = error.code;\n        const errorMessage = error.message;\n        console.log(error.code);\n        if (error.code !== 'auth/email-already-in-use')\n            global.set(\"error\", error.code);\n    });\nmsg.payload.error = global.get(\"error\");\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 330,
-        "y": 720,
+        "x": 310,
+        "y": 780,
         "wires": [
             [
                 "05aa8384d9210938",
@@ -1846,7 +1831,7 @@
         "type": "function",
         "z": "683838d755eb7bc9",
         "name": "error classifier",
-        "func": "console.log(msg.payload.error);\nif (global.get(\"error\") === \"none\")\n{\n    msg.payload = 'Home';\n    global.set(\"state\",1);\n}\nelse if (global.get(\"error\") == \"sign_up_success\")\n{\n    msg.payload = 'auth-login';\n}\nelse\n{\n    msg.payload = \"greeter\";\n}\n\nreturn msg;",
+        "func": "console.log(msg.payload.error);\nif (global.get(\"error\") === \"none\")\n{\n    msg.payload = 'Home';\n   \n}\nelse if (global.get(\"error\") == \"sign_up_success\")\n{\n    msg.payload = 'auth-login';\n}\nelse\n{\n    msg.payload = \"greeter\";\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1897,7 +1882,7 @@
         "type": "function",
         "z": "683838d755eb7bc9",
         "name": "notification display",
-        "func": "if (global.get(\"error\") === 'auth/invalid-credential') {\n    msg.payload = \"Account does not exist\\n or Invalid information\";\n}\nelse if (global.get(\"error\") === 'auth/email-already-in-use') {\n    msg.payload = \"E-mail already in use.\";\n}\nelse if (global.get(\"error\") === 'auth/weak-password') {\n    msg.payload = 'Weak password, consider a stronger one.';\n}\nelse if (global.get(\"error\") === 'sign_up_success'){\n    msg.payload = 'Sign up successful';\n}\nelse if (global.get(\"error\") === 'none')\n{\n    msg.payload = 'Login successful';\n}\nelse {\n    msg.payload = global.get(\"error\");\n}\nreturn msg;",
+        "func": "if (global.get(\"error\") === 'auth/invalid-credential') {\n    msg.payload = \"Account does not exist\\n or Invalid information\";\n}\nelse if (global.get(\"error\") === 'auth/email-already-in-use') {\n    msg.payload = \"E-mail already in use.\";\n}\nelse if (global.get(\"error\") === 'auth/weak-password') {\n    msg.payload = 'Weak password, consider a stronger one.';\n}\nelse if (global.get(\"error\") === 'sign_up_success'){\n    msg.payload = 'Sign up successful';\n}\nelse if (global.get(\"error\") === 'none')\n{\n    msg.payload = 'Login successful';\n}\nelse {\n    msg.payload = global.get(\"error\");\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1983,7 +1968,8 @@
         "y": 460,
         "wires": [
             [
-                "dce2b0a52ab0fd9e"
+                "dce2b0a52ab0fd9e",
+                "dbd02fbdcf0cbd59"
             ]
         ]
     },
@@ -2023,7 +2009,8 @@
         "y": 520,
         "wires": [
             [
-                "dce2b0a52ab0fd9e"
+                "dce2b0a52ab0fd9e",
+                "dbd02fbdcf0cbd59"
             ]
         ]
     },
@@ -2129,6 +2116,24 @@
         "events": "all",
         "x": 500,
         "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dbd02fbdcf0cbd59",
+        "type": "function",
+        "z": "683838d755eb7bc9",
+        "name": "reset",
+        "func": "global.set(\"error\", undefined);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 540,
         "wires": [
             []
         ]
