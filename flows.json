@@ -37,7 +37,7 @@
             },
             "darkTheme": {
                 "default": "#097479",
-                "baseColor": "#018117",
+                "baseColor": "#017e7c",
                 "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
                 "edited": true,
                 "reset": false
@@ -51,11 +51,11 @@
             "themeState": {
                 "base-color": {
                     "default": "#097479",
-                    "value": "#018117",
+                    "value": "#017e7c",
                     "edited": true
                 },
                 "page-titlebar-backgroundColor": {
-                    "value": "#018117",
+                    "value": "#017e7c",
                     "edited": false
                 },
                 "page-backgroundColor": {
@@ -67,7 +67,7 @@
                     "edited": false
                 },
                 "group-textColor": {
-                    "value": "#02cd25",
+                    "value": "#02cac7",
                     "edited": false
                 },
                 "group-borderColor": {
@@ -83,7 +83,7 @@
                     "edited": false
                 },
                 "widget-backgroundColor": {
-                    "value": "#018117",
+                    "value": "#017e7c",
                     "edited": false
                 },
                 "widget-borderColor": {
@@ -128,105 +128,6 @@
         "icon": "dashboard",
         "disabled": false,
         "hidden": true
-    },
-    {
-        "id": "ddbb7bea086b7b90",
-        "type": "ui_base",
-        "theme": {
-            "name": "theme-light",
-            "lightTheme": {
-                "default": "#0094CE",
-                "baseColor": "#0094CE",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "darkTheme": {
-                "default": "#097479",
-                "baseColor": "#5e7ccc",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "customTheme": {
-                "name": "Untitled Theme 1",
-                "default": "#4B7930",
-                "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "reset": false
-            },
-            "themeState": {
-                "base-color": {
-                    "default": "#0094CE",
-                    "value": "#0094CE",
-                    "edited": true
-                },
-                "page-titlebar-backgroundColor": {
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-backgroundColor": {
-                    "value": "#fafafa",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#1bbfff",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "widget-textColor": {
-                    "value": "#111111",
-                    "edited": false
-                },
-                "widget-backgroundColor": {
-                    "value": "#0094ce",
-                    "edited": false
-                },
-                "widget-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "base-font": {
-                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-                }
-            },
-            "angularTheme": {
-                "primary": "indigo",
-                "accents": "blue",
-                "warn": "red",
-                "background": "grey",
-                "palette": "light"
-            }
-        },
-        "site": {
-            "name": "Node-RED Dashboard",
-            "hideToolbar": "false",
-            "allowSwipe": "false",
-            "lockMenu": "false",
-            "allowTempTheme": "true",
-            "dateFormat": "DD/MM/YYYY",
-            "sizes": {
-                "sx": 48,
-                "sy": 48,
-                "gx": 6,
-                "gy": 6,
-                "cx": 6,
-                "cy": 6,
-                "px": 0,
-                "py": 0
-            }
-        }
     },
     {
         "id": "daed06a07de91f6e",
@@ -310,7 +211,7 @@
     {
         "id": "582515c30e2085f0",
         "type": "ui_group",
-        "name": "Cài đặt",
+        "name": "Tùy chỉnh",
         "tab": "4e53ebea557c3eb1",
         "order": 2,
         "disp": true,
@@ -894,6 +795,222 @@
         "x": 860,
         "y": 740,
         "wires": []
+    },
+    {
+        "id": "8879e4a65fea5916",
+        "type": "function",
+        "z": "8728806be4ae285c",
+        "name": "choose associated emails",
+        "func": "// let firebaseDB = global.get(\"firebaseDB\");\n// let db = firebaseDB.getDatabase();\n// let ref = firebaseDB.ref();\n// let onValue = firebaseDB.onValue();\n// let child = firebaseDB.child();\n// let get = firebaseDB.get();\n// let user = global.get(\"user\");\n// let uID = user[\"uid\"];\n// console.log(uID);\n// let userListPath = \"users/\" + uID + \"/associate_emails\";\n// let userList = ref(db, userListPath);\n\n// const dbRef = ref(db);\n// get(child(dbRef, `users/${uID}`)).then((snapshot) => {\n//   if (snapshot.exists()) {\n//     msg.payload = snapshot.val();\n//     console.log(snapshot.val());\n//   } else {\n//     msg.payload = \"no data\";\n//     console.log(\"No data available\");\n//   }\n// }).catch((error) => {\n//   console.error(error);\n// });\n\nlet user = global.get(\"user\");\nconsole.log(user);\nlet emails = user['associate_emails'];\nmsg.payload = emails;\nfor (let i = 0; i < emails.length; i++)\n{\n    msg.emails += emails[i] + \"\\n\";\n}\nmsg.options = emails;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 1040,
+        "wires": [
+            [
+                "c57fdc89b60218a8"
+            ]
+        ]
+    },
+    {
+        "id": "c57fdc89b60218a8",
+        "type": "ui_dropdown",
+        "z": "8728806be4ae285c",
+        "name": "",
+        "label": "Xóa email liên hệ",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "d808010d27de3261",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": true,
+        "options": [],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 670,
+        "y": 1040,
+        "wires": [
+            [
+                "30567a2d0f7c61d9"
+            ]
+        ]
+    },
+    {
+        "id": "30567a2d0f7c61d9",
+        "type": "function",
+        "z": "8728806be4ae285c",
+        "name": "set email list",
+        "func": "global.set(\"email_list\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 1040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ed9dc62b226476c6",
+        "type": "ui_button",
+        "z": "8728806be4ae285c",
+        "name": "",
+        "group": "d808010d27de3261",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Xóa email",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 190,
+        "y": 1120,
+        "wires": [
+            [
+                "628602bc8ade4d84"
+            ]
+        ]
+    },
+    {
+        "id": "628602bc8ade4d84",
+        "type": "function",
+        "z": "8728806be4ae285c",
+        "name": "delete associated emails",
+        "func": "let firebaseDB = global.get(\"firebaseDB\");\nlet removeEmailList = global.get(\"email_list\");\nlet currEmailList = global.get(\"user\")['associate_emails'];\nlet new_email_list = currEmailList.filter(i => !removeEmailList.includes(i));\n\nlet db = firebaseDB.getDatabase();\nlet user = global.get(\"user\");\nconst userDataTemplate = {\n    \"product_id\": user.product_id,\n    \"lux_line\": user.lux_line,\n    \"temperature_line\": user.temperature_line,\n    \"humdity_line\": user.humdity_line,\n    \"associate_emails\": new_email_list\n};\n\nconst updates = {};\nupdates[`/users/${user.uid}`] = userDataTemplate;\nfirebaseDB.update(firebaseDB.ref(db), updates);\nuser.associate_emails = new_email_list;\n\nmsg.payload = new_email_list;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 1120,
+        "wires": [
+            [
+                "290a053eeff30925"
+            ]
+        ]
+    },
+    {
+        "id": "290a053eeff30925",
+        "type": "debug",
+        "z": "8728806be4ae285c",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "4406e379883eae34",
+        "type": "ui_form",
+        "z": "8728806be4ae285c",
+        "name": "",
+        "label": "Thêm email liên hệ",
+        "group": "d808010d27de3261",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Email liên hệ",
+                "value": "email",
+                "type": "email",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "email": ""
+        },
+        "payload": "",
+        "submit": "Gửi",
+        "cancel": "Hủy",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": false,
+        "className": "",
+        "x": 230,
+        "y": 940,
+        "wires": [
+            [
+                "11da48b04991472e"
+            ]
+        ]
+    },
+    {
+        "id": "11da48b04991472e",
+        "type": "function",
+        "z": "8728806be4ae285c",
+        "name": "update associated emails",
+        "func": "let email = Object.values(msg.payload);\nlet firebaseDB = global.get(\"firebaseDB\");\nlet db = firebaseDB.getDatabase();\nlet user = global.get(\"user\");\nlet new_email_list = user.associate_emails.concat(email);\nconst userDataTemplate = {\n    \"product_id\": user.product_id,\n    \"lux_line\": user.lux_line,\n    \"temperature_line\": user.temperature_line,\n    \"humdity_line\": user.humdity_line,\n    \"associate_emails\": new_email_list\n};\n\nconst updates = {};\nupdates[`/users/${user.uid}`] = userDataTemplate;\nfirebaseDB.update(firebaseDB.ref(db), updates);\nuser.associate_emails = new_email_list;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 940,
+        "wires": [
+            [
+                "8879e4a65fea5916"
+            ]
+        ]
+    },
+    {
+        "id": "d9ff6e99c2705609",
+        "type": "inject",
+        "z": "8728806be4ae285c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 1040,
+        "wires": [
+            [
+                "8879e4a65fea5916"
+            ]
+        ]
     },
     {
         "id": "862b289484831b9e",
@@ -1577,7 +1694,7 @@
         "z": "683838d755eb7bc9",
         "name": "",
         "group": "d808010d27de3261",
-        "order": 3,
+        "order": 5,
         "width": 0,
         "height": 0,
         "passthru": false,
