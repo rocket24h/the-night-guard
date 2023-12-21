@@ -1,6 +1,6 @@
 [
     {
-        "id": "4bcce800e9f4e8f4",
+        "id": "8728806be4ae285c",
         "type": "tab",
         "label": "Flow 1",
         "disabled": false,
@@ -8,12 +8,126 @@
         "env": []
     },
     {
-        "id": "43514cf8d06624f2",
+        "id": "683838d755eb7bc9",
         "type": "tab",
         "label": "Main flow",
         "disabled": false,
         "info": "",
         "env": []
+    },
+    {
+        "id": "2a2d7cc8180bc3a2",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": true
+    },
+    {
+        "id": "c99fe9754eda7811",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#018117",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#018117",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#018117",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#02cd25",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#018117",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "647bc02644bda478",
+        "type": "ui_tab",
+        "name": "Login",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": true
     },
     {
         "id": "ddbb7bea086b7b90",
@@ -236,61 +350,20 @@
         "sessionExpiry": ""
     },
     {
-        "id": "42e9fcb1f0126366",
-        "type": "ui_numeric",
-        "z": "4bcce800e9f4e8f4",
-        "name": "",
-        "label": "Nhiệt độ",
-        "tooltip": "",
-        "group": "582515c30e2085f0",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "wrap": false,
-        "passthru": true,
-        "topic": "topic",
-        "topicType": "msg",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "50",
-        "step": 1,
-        "className": "",
-        "x": 460,
-        "y": 600,
-        "wires": [
-            []
-        ]
+        "id": "d808010d27de3261",
+        "type": "ui_group",
+        "name": "Cài đặt",
+        "tab": "4e53ebea557c3eb1",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
     },
     {
-        "id": "f1758f8b4a009f3e",
-        "type": "ui_numeric",
-        "z": "4bcce800e9f4e8f4",
-        "name": "",
-        "label": "Độ ẩm",
-        "tooltip": "",
-        "group": "582515c30e2085f0",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "wrap": false,
-        "passthru": true,
-        "topic": "topic",
-        "topicType": "msg",
-        "format": "{{value}}",
-        "min": "20",
-        "max": "80",
-        "step": 1,
-        "className": "",
-        "x": 450,
-        "y": 500,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "647d2477af278492",
+        "id": "1cb085b3d4025fdd",
         "type": "mqtt in",
-        "z": "4bcce800e9f4e8f4",
+        "z": "8728806be4ae285c",
         "name": "data collector",
         "topic": "",
         "qos": "2",
@@ -300,18 +373,18 @@
         "rap": true,
         "rh": 0,
         "inputs": 1,
-        "x": 330,
+        "x": 370,
         "y": 240,
         "wires": [
             [
-                "429dcfc2f335ed3d"
+                "5f301106a47cabfa"
             ]
         ]
     },
     {
-        "id": "e043b296c26090a2",
+        "id": "14cbfa06c9f4a690",
         "type": "inject",
-        "z": "4bcce800e9f4e8f4",
+        "z": "8728806be4ae285c",
         "name": "subscribeData",
         "props": [
             {
@@ -334,14 +407,14 @@
         "y": 240,
         "wires": [
             [
-                "647d2477af278492"
+                "1cb085b3d4025fdd"
             ]
         ]
     },
     {
-        "id": "429dcfc2f335ed3d",
+        "id": "5f301106a47cabfa",
         "type": "json",
-        "z": "4bcce800e9f4e8f4",
+        "z": "8728806be4ae285c",
         "name": "",
         "property": "payload",
         "action": "obj",
@@ -350,17 +423,17 @@
         "y": 240,
         "wires": [
             [
-                "35404d13424dd6be",
-                "13a076fb1625a89f",
-                "948f6408aaf107ce",
-                "33394e5f909d07cb"
+                "7e2abccd2d2325d3",
+                "3a7cbcf6b6fef00c",
+                "a92d9d2136dc5e9d",
+                "8cd165ad05949401"
             ]
         ]
     },
     {
-        "id": "35404d13424dd6be",
+        "id": "7e2abccd2d2325d3",
         "type": "function",
-        "z": "4bcce800e9f4e8f4",
+        "z": "8728806be4ae285c",
         "name": "getTemp",
         "func": "msg.payload = msg.payload.data[0]\nreturn msg;",
         "outputs": 1,
@@ -373,14 +446,14 @@
         "y": 160,
         "wires": [
             [
-                "7ccec3abf5dced76"
+                "5216c2e8420681a8"
             ]
         ]
     },
     {
-        "id": "13a076fb1625a89f",
+        "id": "3a7cbcf6b6fef00c",
         "type": "function",
-        "z": "4bcce800e9f4e8f4",
+        "z": "8728806be4ae285c",
         "name": "getHumidity",
         "func": "msg.payload = msg.payload.data[1]\nreturn msg;",
         "outputs": 1,
@@ -393,14 +466,14 @@
         "y": 240,
         "wires": [
             [
-                "898f2b67ce468632"
+                "9c726b897bfd7e1b"
             ]
         ]
     },
     {
-        "id": "948f6408aaf107ce",
+        "id": "a92d9d2136dc5e9d",
         "type": "function",
-        "z": "4bcce800e9f4e8f4",
+        "z": "8728806be4ae285c",
         "name": "getLux",
         "func": "msg.payload = msg.payload.data[2]\nreturn msg;",
         "outputs": 1,
@@ -413,14 +486,14 @@
         "y": 320,
         "wires": [
             [
-                "f755f1b777b98967"
+                "b0f6f4cde73d6e48"
             ]
         ]
     },
     {
-        "id": "7ccec3abf5dced76",
+        "id": "5216c2e8420681a8",
         "type": "ui_chart",
-        "z": "4bcce800e9f4e8f4",
+        "z": "8728806be4ae285c",
         "name": "",
         "group": "daed06a07de91f6e",
         "order": 3,
@@ -462,9 +535,9 @@
         ]
     },
     {
-        "id": "898f2b67ce468632",
+        "id": "9c726b897bfd7e1b",
         "type": "ui_chart",
-        "z": "4bcce800e9f4e8f4",
+        "z": "8728806be4ae285c",
         "name": "",
         "group": "daed06a07de91f6e",
         "order": 4,
@@ -506,9 +579,9 @@
         ]
     },
     {
-        "id": "f755f1b777b98967",
+        "id": "b0f6f4cde73d6e48",
         "type": "ui_gauge",
-        "z": "4bcce800e9f4e8f4",
+        "z": "8728806be4ae285c",
         "name": "",
         "group": "daed06a07de91f6e",
         "order": 5,
@@ -534,9 +607,9 @@
         "wires": []
     },
     {
-        "id": "33394e5f909d07cb",
+        "id": "8cd165ad05949401",
         "type": "function",
-        "z": "4bcce800e9f4e8f4",
+        "z": "8728806be4ae285c",
         "name": "WriteDB",
         "func": "let dataPoints = [];\nconst { getDatabase, ref, child, push, update } = global.get(\"firebaseDB\");\n\nlet user = global.get(\"user\");\nlet {series : labels, data} = msg.payload;\nlet timestamp = Date.now();\nfor(let i =0;i<labels.length;i++){\n    dataPoints.push({\n        \"label\" : labels[i],\n        \"data\" : data[i],\n        \"product_id\" : user.product_id,\n    });\n}\nconsole.log(dataPoints);\nconst db = getDatabase(global.get(\"app\"));\n// Write the new post's data simultaneously in the posts list and the user's post list.\nconst updates = {};\nupdates['/product_data/' + user.product_id + \"/\" + timestamp] = dataPoints;\nreturn update(ref(db), updates);",
         "outputs": 1,
@@ -552,9 +625,9 @@
         ]
     },
     {
-        "id": "655f3c682be23a06",
+        "id": "d5f104c583a50d03",
         "type": "mqtt out",
-        "z": "4bcce800e9f4e8f4",
+        "z": "8728806be4ae285c",
         "name": "buzzer",
         "topic": "",
         "qos": "",
@@ -570,9 +643,9 @@
         "wires": []
     },
     {
-        "id": "d6cd76b76df77bea",
+        "id": "c50882da0105dc5a",
         "type": "ui_switch",
-        "z": "4bcce800e9f4e8f4",
+        "z": "8728806be4ae285c",
         "name": "",
         "label": "Loa",
         "tooltip": "",
@@ -599,33 +672,14 @@
         "y": 80,
         "wires": [
             [
-                "f1a5aa4f3511d555",
-                "655f3c682be23a06"
+                "d5f104c583a50d03"
             ]
         ]
     },
     {
-        "id": "f1a5aa4f3511d555",
-        "type": "function",
-        "z": "4bcce800e9f4e8f4",
-        "name": "function 1",
-        "func": "console.log(msg.topic);\nconsole.log(msg.payload)\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 480,
-        "y": 180,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "21d87780b1c4792b",
+        "id": "34bb237e61b831e8",
         "type": "mqtt in",
-        "z": "4bcce800e9f4e8f4",
+        "z": "8728806be4ae285c",
         "name": "",
         "topic": "91728327/command",
         "qos": "2",
@@ -639,14 +693,14 @@
         "y": 360,
         "wires": [
             [
-                "c6f3d457efe423b4"
+                "a059ef8e238ed29d"
             ]
         ]
     },
     {
-        "id": "c6f3d457efe423b4",
+        "id": "a059ef8e238ed29d",
         "type": "debug",
-        "z": "4bcce800e9f4e8f4",
+        "z": "8728806be4ae285c",
         "name": "debug 6",
         "active": true,
         "tosidebar": true,
@@ -656,16 +710,197 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 430,
+        "x": 460,
         "y": 360,
         "wires": []
     },
     {
-        "id": "75c620f2cd6f073b",
+        "id": "58ed924cbe31cc65",
+        "type": "ui_numeric",
+        "z": "8728806be4ae285c",
+        "name": "",
+        "label": "Nhiệt độ",
+        "tooltip": "",
+        "group": "582515c30e2085f0",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "step": 1,
+        "className": "",
+        "x": 200,
+        "y": 740,
+        "wires": [
+            [
+                "34835ca5a41c4627"
+            ]
+        ]
+    },
+    {
+        "id": "edc0ff02a1204ce9",
+        "type": "ui_numeric",
+        "z": "8728806be4ae285c",
+        "name": "",
+        "label": "Độ ẩm",
+        "tooltip": "",
+        "group": "582515c30e2085f0",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": "20",
+        "max": "80",
+        "step": 1,
+        "className": "",
+        "x": 180,
+        "y": 640,
+        "wires": [
+            [
+                "2cc898fb9e0c54c8"
+            ]
+        ]
+    },
+    {
+        "id": "2cc898fb9e0c54c8",
         "type": "function",
-        "z": "43514cf8d06624f2",
+        "z": "8728806be4ae285c",
+        "name": "setHumidityLine",
+        "func": "let user = global.get(\"user\");\n\nuser.humidity_line = msg.payload\n\nglobal.set(\"user\",user)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 640,
+        "wires": [
+            [
+                "383ebbccc65e0cc4"
+            ]
+        ]
+    },
+    {
+        "id": "34835ca5a41c4627",
+        "type": "function",
+        "z": "8728806be4ae285c",
+        "name": "setTempLine",
+        "func": "let user = global.get(\"user\");\n\nuser.temperature_line = msg.payload\n\nglobal.set(\"user\",user)\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 740,
+        "wires": [
+            [
+                "383ebbccc65e0cc4"
+            ]
+        ]
+    },
+    {
+        "id": "383ebbccc65e0cc4",
+        "type": "function",
+        "z": "8728806be4ae285c",
+        "name": "updateLine",
+        "func": "let user = global.get(\"user\");\nconst firebaseDB = global.get(\"firebaseDB\");\nlet limits = {\n    \"temperature_line\" : user.temperature_line, \n    \"humidity_line\": user.humidity_line,\n    \"lux_line\": user.lux_line\n}\n\nconst db = firebaseDB.getDatabase(global.get(\"app\"));\n\nmsg.payload = {\n    \"lux_line\": user.lux_line,\n    \"temperature_line\": user.temperature_line,\n    \"humdity_line\": user.humidity_line\n}\n\nmsg.topic = `${user.product_id}/limits`\n\nconst userDataTemplate = {\n    \"product_id\": user.product_id,\n    \"lux_line\": user.lux_line,\n    \"temperature_line\": user.temperature_line,\n    \"humdity_line\": user.humidity_line,\n    \"associate_emails\" : user.associate_emails\n};\nconst updates = {};\nupdates[`/users/${user.uid}`] = userDataTemplate;\nfirebaseDB.update(firebaseDB.ref(db), updates);\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 740,
+        "wires": [
+            [
+                "84efea4bd94bc7f9"
+            ]
+        ]
+    },
+    {
+        "id": "8ebdf6baa5ae460b",
+        "type": "ui_slider",
+        "z": "8728806be4ae285c",
+        "name": "",
+        "label": "Ánh sáng",
+        "tooltip": "",
+        "group": "582515c30e2085f0",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "10000",
+        "step": "10",
+        "className": "",
+        "x": 190,
+        "y": 820,
+        "wires": [
+            [
+                "b764057de639b9f4"
+            ]
+        ]
+    },
+    {
+        "id": "b764057de639b9f4",
+        "type": "function",
+        "z": "8728806be4ae285c",
+        "name": "setTempLine",
+        "func": "let user = global.get(\"user\");\n\nuser.lux_line = msg.payload\n\nglobal.set(\"user\",user)\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 820,
+        "wires": [
+            [
+                "383ebbccc65e0cc4"
+            ]
+        ]
+    },
+    {
+        "id": "84efea4bd94bc7f9",
+        "type": "mqtt out",
+        "z": "8728806be4ae285c",
+        "name": "updateLimits",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "865a1c42bdeea9dc",
+        "x": 860,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "862b289484831b9e",
+        "type": "function",
+        "z": "683838d755eb7bc9",
         "name": "sign-up func",
-        "func": "let email = msg.payload.email;\nlet password = msg.payload.password;\nlet firebaseAuth = flow.get(\"firebaseAuth\");\nlet firebaseApp = flow.get(\"firebaseApp\");\nconst firebaseDB =global.get(\"firebaseDB\");\nlet pId = msg.payload.esp_id;\nlet auth = flow.get(\"auth\");\nfirebaseAuth.createUserWithEmailAndPassword(auth, email, password)\n    .then((userCredential) => {\n    // Signed up \n        const user = userCredential.user;\n        try{       \n            const db = firebaseDB.getDatabase(global.get(\"app\"));\n            \n            const userDataTemplate = {\n                \"product_id\": pId,\n                \"lux_line\": 10000,\n                \"temperature_line\": 30,\n                \"humdity_line\": 30,\n                \"associate_emails\" : [email]\n            };\n            const updates = {};\n            updates[`/users/${user.uid}`] = userDataTemplate;\n            firebaseDB.update(firebaseDB.ref(db), updates);   \n        }\n        catch(e){\n            console.log(e);\n        }\n        global.set(\"error\", \"sign_up_success\")\n        // ...\n    })\n    .catch((error) => {\n        const errorCode = error.code;\n        const errorMessage = error.message;\n        // ..\n        console.log(error);\n        global.set(\"error\", error.code);\n    });\nmsg.payload.error = global.get(\"error\");\nreturn msg;",
+        "func": "let email = msg.payload.email;\nlet password = msg.payload.password;\nlet firebaseAuth = flow.get(\"firebaseAuth\");\nlet firebaseApp = flow.get(\"firebaseApp\");\nconst firebaseDB =global.get(\"firebaseDB\");\nlet pId = msg.payload.esp_id;\nlet auth = flow.get(\"auth\");\nfirebaseAuth.createUserWithEmailAndPassword(auth, email, password)\n    .then((userCredential) => {\n    // Signed up \n        const user = userCredential.user;\n        try{       \n            const db = firebaseDB.getDatabase(global.get(\"app\"));\n            const userDataTemplate = {\n                \"product_id\": pId,\n                \"lux_line\": 10000,\n                \"temperature_line\": 30,\n                \"humdity_line\": 30,\n                \"associate_emails\" : [email]\n            };\n            const updates = {};\n            updates[`/users/${user.uid}`] = userDataTemplate;\n            firebaseDB.update(firebaseDB.ref(db), updates);   \n            global.set(\"error\", \"sign_up_success\");\n        }\n        catch(e){\n            console.log(e);\n            global.set(\"error\", e.code);\n        }\n        \n        // ...\n    })\n    .catch((error) => {\n        const errorCode = error.code;\n        // ..\n        console.log(errorCode);\n        global.set(\"error\", errorCode);\n    });\nmsg.payload.error = global.get(\"error\");\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -673,19 +908,19 @@
         "finalize": "",
         "libs": [],
         "x": 330,
-        "y": 520,
+        "y": 660,
         "wires": [
             [
-                "c93379c85a4226c0",
-                "c6db07c02acaec01",
-                "901d2ce129b5130d"
+                "05aa8384d9210938",
+                "4ab2f65abfc3492b",
+                "f3dc364c351f4fd8"
             ]
         ]
     },
     {
-        "id": "1db2edec474e4330",
+        "id": "e9e6cdd33d235834",
         "type": "inject",
-        "z": "43514cf8d06624f2",
+        "z": "683838d755eb7bc9",
         "name": "",
         "props": [
             {
@@ -703,14 +938,14 @@
         "y": 100,
         "wires": [
             [
-                "6db4ca4daec6b406"
+                "dad9617bb12f1eb4"
             ]
         ]
     },
     {
-        "id": "5a64446eb11130f5",
+        "id": "cf6ad5e9c675f130",
         "type": "inject",
-        "z": "43514cf8d06624f2",
+        "z": "683838d755eb7bc9",
         "name": "",
         "props": [
             {
@@ -722,20 +957,20 @@
         "once": true,
         "onceDelay": "0",
         "topic": "",
-        "payload": "Welcome to The night guard!",
+        "payload": "Ứng dụng quản lý giấc ngủ",
         "payloadType": "str",
-        "x": 210,
+        "x": 230,
         "y": 160,
         "wires": [
             [
-                "8e39c74644ce9008"
+                "8b623f2e4b58027e"
             ]
         ]
     },
     {
-        "id": "203d4b54cdacd0ed",
+        "id": "cb9dc42d839de40a",
         "type": "inject",
-        "z": "43514cf8d06624f2",
+        "z": "683838d755eb7bc9",
         "name": "",
         "props": [
             {
@@ -747,45 +982,45 @@
         "once": true,
         "onceDelay": "0",
         "topic": "",
-        "payload": "If you're new here, select Sign up!",
+        "payload": "Chọn \"Đăng ký\" nếu bạn chưa có tài khoản",
         "payloadType": "str",
         "x": 230,
-        "y": 200,
-        "wires": [
-            [
-                "f7c669eddb1177f9"
-            ]
-        ]
-    },
-    {
-        "id": "14eb8a0d45ac7ff2",
-        "type": "inject",
-        "z": "43514cf8d06624f2",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "0",
-        "topic": "",
-        "payload": "If not, select Log in!",
-        "payloadType": "str",
-        "x": 270,
         "y": 240,
         "wires": [
             [
-                "598f24c9068cdc73"
+                "5817f5564a36064a"
             ]
         ]
     },
     {
-        "id": "8d8a5aa927d0376f",
+        "id": "e2e48c36ec9afca5",
         "type": "inject",
-        "z": "43514cf8d06624f2",
+        "z": "683838d755eb7bc9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0",
+        "topic": "",
+        "payload": "Chọn \"Đăng nhập\" nếu bạn đã có tài khoản",
+        "payloadType": "str",
+        "x": 230,
+        "y": 280,
+        "wires": [
+            [
+                "177d8e8aac725ef4"
+            ]
+        ]
+    },
+    {
+        "id": "d885d7e9454a7b47",
+        "type": "inject",
+        "z": "683838d755eb7bc9",
         "name": "",
         "props": [
             {
@@ -807,18 +1042,18 @@
         "y": 40,
         "wires": [
             [
-                "292819b5eb4de6e2"
+                "acf147e55db7e7fd"
             ]
         ]
     },
     {
-        "id": "8fd2bbea4ec1be32",
+        "id": "3d67895c0ac622c2",
         "type": "ui_form",
-        "z": "43514cf8d06624f2",
+        "z": "683838d755eb7bc9",
         "name": "",
-        "label": "",
+        "label": "Sign up form",
         "group": "03a4d575031cec75",
-        "order": 0,
+        "order": 1,
         "width": 0,
         "height": 0,
         "options": [
@@ -850,24 +1085,24 @@
             "esp_id": ""
         },
         "payload": "",
-        "submit": "Register",
-        "cancel": "",
+        "submit": "Đăng ký",
+        "cancel": "Hủy",
         "topic": "topic",
         "topicType": "msg",
         "splitLayout": "",
         "className": "",
-        "x": 110,
-        "y": 520,
+        "x": 130,
+        "y": 660,
         "wires": [
             [
-                "75c620f2cd6f073b"
+                "862b289484831b9e"
             ]
         ]
     },
     {
-        "id": "8e39c74644ce9008",
+        "id": "8b623f2e4b58027e",
         "type": "ui_text",
-        "z": "43514cf8d06624f2",
+        "z": "683838d755eb7bc9",
         "group": "e2d7f0cab14ea66b",
         "order": 1,
         "width": 0,
@@ -886,32 +1121,11 @@
         "wires": []
     },
     {
-        "id": "f7c669eddb1177f9",
+        "id": "5817f5564a36064a",
         "type": "ui_text",
-        "z": "43514cf8d06624f2",
+        "z": "683838d755eb7bc9",
         "group": "e2d7f0cab14ea66b",
         "order": 2,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "",
-        "format": "{{msg.payload}}",
-        "layout": "row-left",
-        "className": "",
-        "style": true,
-        "font": "Gill Sans,Geneva,sans-serif",
-        "fontSize": "14",
-        "color": "#ffffff",
-        "x": 470,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "598f24c9068cdc73",
-        "type": "ui_text",
-        "z": "43514cf8d06624f2",
-        "group": "e2d7f0cab14ea66b",
-        "order": 3,
         "width": 0,
         "height": 0,
         "name": "",
@@ -928,9 +1142,30 @@
         "wires": []
     },
     {
-        "id": "6db4ca4daec6b406",
+        "id": "177d8e8aac725ef4",
+        "type": "ui_text",
+        "z": "683838d755eb7bc9",
+        "group": "e2d7f0cab14ea66b",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": true,
+        "font": "Gill Sans,Geneva,sans-serif",
+        "fontSize": "14",
+        "color": "#ffffff",
+        "x": 470,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "dad9617bb12f1eb4",
         "type": "ui_ui_control",
-        "z": "43514cf8d06624f2",
+        "z": "683838d755eb7bc9",
         "name": "",
         "events": "all",
         "x": 460,
@@ -940,9 +1175,9 @@
         ]
     },
     {
-        "id": "292819b5eb4de6e2",
+        "id": "acf147e55db7e7fd",
         "type": "function",
-        "z": "43514cf8d06624f2",
+        "z": "683838d755eb7bc9",
         "name": "flow definitions",
         "func": "\nreturn msg;",
         "outputs": 1,
@@ -971,16 +1206,16 @@
         ]
     },
     {
-        "id": "871fa91c3eea53ce",
+        "id": "8ed51b5086eaaaa1",
         "type": "ui_button",
-        "z": "43514cf8d06624f2",
+        "z": "683838d755eb7bc9",
         "name": "",
         "group": "e2d7f0cab14ea66b",
         "order": 3,
         "width": 0,
         "height": 0,
         "passthru": false,
-        "label": "Sign up",
+        "label": "Đăng ký",
         "tooltip": "",
         "color": "",
         "bgcolor": "",
@@ -994,21 +1229,21 @@
         "y": 360,
         "wires": [
             [
-                "68d16d7742af950a"
+                "f69527460697f79e"
             ]
         ]
     },
     {
-        "id": "a4440a9f2557af8b",
+        "id": "5e9bb2c9e9e55af8",
         "type": "ui_button",
-        "z": "43514cf8d06624f2",
+        "z": "683838d755eb7bc9",
         "name": "",
         "group": "e2d7f0cab14ea66b",
         "order": 4,
         "width": 0,
         "height": 0,
         "passthru": false,
-        "label": "Log in",
+        "label": "Đăng nhập",
         "tooltip": "",
         "color": "",
         "bgcolor": "",
@@ -1018,18 +1253,18 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 270,
-        "y": 440,
+        "x": 290,
+        "y": 420,
         "wires": [
             [
-                "68d16d7742af950a"
+                "f69527460697f79e"
             ]
         ]
     },
     {
-        "id": "68d16d7742af950a",
+        "id": "f69527460697f79e",
         "type": "ui_ui_control",
-        "z": "43514cf8d06624f2",
+        "z": "683838d755eb7bc9",
         "name": "",
         "events": "all",
         "x": 480,
@@ -1039,11 +1274,11 @@
         ]
     },
     {
-        "id": "511a3ce603ce4729",
+        "id": "e732af4e32bbf33a",
         "type": "function",
-        "z": "43514cf8d06624f2",
+        "z": "683838d755eb7bc9",
         "name": "log-in func",
-        "func": "let email = msg.payload.email;\nlet password = msg.payload.password;\nlet firebaseAuth = flow.get(\"firebaseAuth\");\nlet firebaseApp = flow.get(\"firebaseApp\");\nconst firebaseDB = global.get(\"firebaseDB\");\nlet auth = flow.get(\"auth\");\nfirebaseAuth.signInWithEmailAndPassword(auth, email, password)\n    .then((userCredential) => {\n    // Signed up \n        const user = userCredential.user;\n        const dbRef = firebaseDB.ref(firebaseDB.getDatabase(global.get(\"app\")));\n        firebaseDB.get(firebaseDB.child(dbRef, `users/${user.uid}`)).then((snapshot) => {\n            if (snapshot.exists()) {\n                let currUser = snapshot.val();\n                currUser['email'] = email;\n                currUser['uid'] = user.uid;\n                console.log(\"login here\");\n                console.log(currUser);\n                global.set(\"user\",currUser);\n                global.set(\"dataTopic\",`${currUser.product_id}/datas`);\n                global.set(\"gasTopic\", `${currUser.product_id}/gasState`);\n                global.set(\"commandTopic\",`${currUser.product_id}/command`);\n                console.log(snapshot.val());\n                global.set(\"error\", \"none\");\n            } else {\n                global.set(\"error\",\"NO ACCOUNT\");\n            }\n        }).catch((error) => {\n            global.set(\"error\",error);\n        });\n    // ...\n    })\n    .catch((error) => {\n        const errorCode = error.code;\n        const errorMessage = error.message;\n        console.log(error.code);\n        if (error.code !== 'auth/email-already-in-use')\n            global.set(\"error\", error.code);\n    });\nmsg.payload.error = global.get(\"error\");\nreturn msg;",
+        "func": "let email = msg.payload.email;\nlet password = msg.payload.password;\nlet firebaseAuth = flow.get(\"firebaseAuth\");\nlet firebaseApp = flow.get(\"firebaseApp\");\nconst firebaseDB = global.get(\"firebaseDB\");\nlet auth = flow.get(\"auth\");\nfirebaseAuth.signInWithEmailAndPassword(auth, email, password)\n    .then((userCredential) => {\n    // Signed up \n        const user = userCredential.user;\n        const dbRef = firebaseDB.ref(firebaseDB.getDatabase(global.get(\"app\")));\n        firebaseDB.get(firebaseDB.child(dbRef, `users/${user.uid}`)).then((snapshot) => {\n            if (snapshot.exists()) {\n                let currUser = snapshot.val();\n                currUser['email'] = email;\n                currUser['uid'] = user.uid;\n                console.log(\"login here\");\n                console.log(currUser);\n                global.set(\"user\",currUser);\n                global.set(\"dataTopic\",`${currUser.product_id}/datas`);\n                global.set(\"gasTopic\", `${currUser.product_id}/gasState`);\n                global.set(\"commandTopic\",`${currUser.product_id}/command`);\n                console.log(snapshot.val());\n                global.set(\"error\", \"none\");\n            } else {\n                global.set(\"error\",\"NO ACCOUNT\");\n            }\n        }).catch((error) => {\n            global.set(\"error\", error);\n        });\n    // ...\n    })\n    .catch((error) => {\n        const errorCode = error.code;\n        const errorMessage = error.message;\n        console.log(error.code);\n        if (error.code !== 'auth/email-already-in-use')\n            global.set(\"error\", error.code);\n    });\nmsg.payload.error = global.get(\"error\");\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1051,20 +1286,20 @@
         "finalize": "",
         "libs": [],
         "x": 330,
-        "y": 580,
+        "y": 720,
         "wires": [
             [
-                "c93379c85a4226c0",
-                "c6db07c02acaec01"
+                "05aa8384d9210938",
+                "4ab2f65abfc3492b"
             ]
         ]
     },
     {
-        "id": "2c3d43de6c60047c",
+        "id": "94d19e8c8949627f",
         "type": "ui_form",
-        "z": "43514cf8d06624f2",
+        "z": "683838d755eb7bc9",
         "name": "",
-        "label": "",
+        "label": "Log in form",
         "group": "908ccab1d106a84d",
         "order": 1,
         "width": 0,
@@ -1090,26 +1325,26 @@
             "password": ""
         },
         "payload": "",
-        "submit": "Login",
-        "cancel": "",
+        "submit": "Đăng nhập",
+        "cancel": "Hủy",
         "topic": "topic",
         "topicType": "msg",
         "splitLayout": "",
         "className": "",
-        "x": 100,
-        "y": 580,
+        "x": 130,
+        "y": 720,
         "wires": [
             [
-                "511a3ce603ce4729"
+                "e732af4e32bbf33a"
             ]
         ]
     },
     {
-        "id": "c93379c85a4226c0",
+        "id": "05aa8384d9210938",
         "type": "function",
-        "z": "43514cf8d06624f2",
+        "z": "683838d755eb7bc9",
         "name": "error classifier",
-        "func": "console.log(msg.payload.error);\nif (msg.payload.error === \"none\")\n{\n    msg.payload = 'Home';\n}\nelse\n{\n    msg.payload = \"greeter\";\n}\n\nreturn msg;",
+        "func": "console.log(msg.payload.error);\nif (global.get(\"error\") === \"none\")\n{\n    msg.payload = 'Home';\n}\nelse if (global.get(\"error\") == \"sign_up_success\")\n{\n    msg.payload = 'auth-login';\n}\nelse\n{\n    msg.payload = \"greeter\";\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1117,29 +1352,29 @@
         "finalize": "",
         "libs": [],
         "x": 620,
-        "y": 460,
+        "y": 600,
         "wires": [
             [
-                "8ab44e2e7cce4586"
+                "2f01f1f44d5c3522"
             ]
         ]
     },
     {
-        "id": "8ab44e2e7cce4586",
+        "id": "2f01f1f44d5c3522",
         "type": "ui_ui_control",
-        "z": "43514cf8d06624f2",
+        "z": "683838d755eb7bc9",
         "name": "",
         "events": "all",
         "x": 900,
-        "y": 460,
+        "y": 600,
         "wires": [
             []
         ]
     },
     {
-        "id": "65aaa5544205edc5",
+        "id": "7cb5ddcafcecf24e",
         "type": "ui_toast",
-        "z": "43514cf8d06624f2",
+        "z": "683838d755eb7bc9",
         "position": "top right",
         "displayTime": "5",
         "highlight": "",
@@ -1151,34 +1386,34 @@
         "className": "",
         "topic": "",
         "name": "",
-        "x": 900,
-        "y": 700,
+        "x": 910,
+        "y": 800,
         "wires": []
     },
     {
-        "id": "c6db07c02acaec01",
+        "id": "4ab2f65abfc3492b",
         "type": "function",
-        "z": "43514cf8d06624f2",
+        "z": "683838d755eb7bc9",
         "name": "notification display",
-        "func": "if (msg.payload.error === 'auth/invalid-credential') {\n    msg.payload = \"Account does not exist\\n or Invalid information\";\n}\nelse if (msg.payload.error === 'auth/email-already-in-use') {\n    msg.payload = \"E-mail already in use.\";\n}\nelse if (msg.payload.error === 'auth/weak-password') {\n    msg.payload = 'Weak password, consider a stronger one.';\n}\nelse if (msg.payload.error === 'sign_up_success'){\n    msg.payload = 'Sign up successful';\n}\nelse {\n    msg.payload = \"Login successful\";\n}\nreturn msg;",
+        "func": "if (global.get(\"error\") === 'auth/invalid-credential') {\n    msg.payload = \"Account does not exist\\n or Invalid information\";\n}\nelse if (global.get(\"error\") === 'auth/email-already-in-use') {\n    msg.payload = \"E-mail already in use.\";\n}\nelse if (global.get(\"error\") === 'auth/weak-password') {\n    msg.payload = 'Weak password, consider a stronger one.';\n}\nelse if (global.get(\"error\") === 'sign_up_success'){\n    msg.payload = 'Sign up successful';\n}\nelse if (global.get(\"error\") == 'none')\n{\n    msg.payload = 'Login successful';\n}\nelse {\n    msg.payload = \"Undefined error\";\n}\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 590,
-        "y": 660,
+        "x": 630,
+        "y": 800,
         "wires": [
             [
-                "65aaa5544205edc5"
+                "7cb5ddcafcecf24e"
             ]
         ]
     },
     {
-        "id": "57659e3c56e6d391",
+        "id": "18f50e285be3b88f",
         "type": "comment",
-        "z": "43514cf8d06624f2",
+        "z": "683838d755eb7bc9",
         "name": "Chạy 1 lần để dẫn tới trang chủ",
         "info": "",
         "x": 730,
@@ -1186,9 +1421,9 @@
         "wires": []
     },
     {
-        "id": "49b3c2d87604528d",
+        "id": "c192485ad1463b5c",
         "type": "comment",
-        "z": "43514cf8d06624f2",
+        "z": "683838d755eb7bc9",
         "name": "Sign up và log-in",
         "info": "Nếu fail thì quay lại trang chủ, cả 2 quá trình đều vậy",
         "x": 1100,
@@ -1196,19 +1431,19 @@
         "wires": []
     },
     {
-        "id": "7f4e0d4d06111381",
+        "id": "7a5b9817013cf2a2",
         "type": "comment",
-        "z": "43514cf8d06624f2",
+        "z": "683838d755eb7bc9",
         "name": "Tài liệu tham khảo",
         "info": "https://firebase.google.com/docs/auth/web/password-auth#create_a_password-based_account",
-        "x": 1090,
-        "y": 40,
+        "x": 690,
+        "y": 100,
         "wires": []
     },
     {
-        "id": "901d2ce129b5130d",
+        "id": "f3dc364c351f4fd8",
         "type": "debug",
-        "z": "43514cf8d06624f2",
+        "z": "683838d755eb7bc9",
         "name": "debug 5",
         "active": true,
         "tosidebar": true,
@@ -1218,8 +1453,182 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 570,
-        "y": 560,
+        "x": 600,
+        "y": 700,
         "wires": []
+    },
+    {
+        "id": "3695fee555b3a1a9",
+        "type": "ui_button",
+        "z": "683838d755eb7bc9",
+        "name": "",
+        "group": "908ccab1d106a84d",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Trở lại",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "greeter",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 270,
+        "y": 460,
+        "wires": [
+            [
+                "dce2b0a52ab0fd9e"
+            ]
+        ]
+    },
+    {
+        "id": "dce2b0a52ab0fd9e",
+        "type": "ui_ui_control",
+        "z": "683838d755eb7bc9",
+        "name": "",
+        "events": "all",
+        "x": 480,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "46a835901a717fc8",
+        "type": "ui_button",
+        "z": "683838d755eb7bc9",
+        "name": "",
+        "group": "03a4d575031cec75",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Trở lại",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "greeter",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 270,
+        "y": 520,
+        "wires": [
+            [
+                "dce2b0a52ab0fd9e"
+            ]
+        ]
+    },
+    {
+        "id": "6082ab60a5d4658d",
+        "type": "inject",
+        "z": "683838d755eb7bc9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0",
+        "topic": "",
+        "payload": "THE NIGHT GUARD",
+        "payloadType": "str",
+        "x": 280,
+        "y": 200,
+        "wires": [
+            [
+                "bb8c2e499f9b2b4c"
+            ]
+        ]
+    },
+    {
+        "id": "bb8c2e499f9b2b4c",
+        "type": "ui_text",
+        "z": "683838d755eb7bc9",
+        "group": "e2d7f0cab14ea66b",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "",
+        "format": "<center>{{msg.payload}}</center>",
+        "layout": "row-center",
+        "className": "",
+        "style": true,
+        "font": "Gill Sans,Geneva,sans-serif",
+        "fontSize": "16",
+        "color": "#ffffff",
+        "x": 470,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "7f1de82f142d1daf",
+        "type": "ui_button",
+        "z": "683838d755eb7bc9",
+        "name": "",
+        "group": "d808010d27de3261",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Đăng xuất",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 130,
+        "y": 880,
+        "wires": [
+            [
+                "b7e45905d3792a6a"
+            ]
+        ]
+    },
+    {
+        "id": "b7e45905d3792a6a",
+        "type": "function",
+        "z": "683838d755eb7bc9",
+        "name": "function 2",
+        "func": "let firebaseAuth = flow.get(\"firebaseAuth\");\nlet firebaseApp = flow.get(\"firebaseApp\");\nlet auth = flow.get(\"auth\");\nfirebaseAuth.signOut(auth)\n    .then((userCredentials) => \n    {   \n        global.set(\"user\", null);\n        global.set(\"dataTopic\", null);\n        global.set(\"gasTopic\", null);\n        global.set(\"commandTopic\", null);\n        global.set(\"error\", \"none\");\n        flow.set(\"signout\",\"Signed out\");        \n    })\n    .catch((error) => {\n        flow.set(\"signout\", \"Error trying to sign out\");\n    });\nmsg.payload = flow.get(\"signout\") === \"Signed out\" ? \"greeter\" : \"Home\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 880,
+        "wires": [
+            [
+                "371c8f0408aaea5c"
+            ]
+        ]
+    },
+    {
+        "id": "371c8f0408aaea5c",
+        "type": "ui_ui_control",
+        "z": "683838d755eb7bc9",
+        "name": "",
+        "events": "all",
+        "x": 500,
+        "y": 880,
+        "wires": [
+            []
+        ]
     }
 ]
